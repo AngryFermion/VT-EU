@@ -31,6 +31,8 @@ PROGRESS_TIMEOUT = 120          # Seconds to wait for progress updates
 # Global variables
 connected = False
 progress_received = False
+transmission_done = False
+last_progress_time = 0.0
 
 def on_connect(client, userdata, flags, reason_code, properties=None):
     """Callback for MQTT connection - compatible with both API versions"""
@@ -47,17 +49,21 @@ def on_connect(client, userdata, flags, reason_code, properties=None):
     else:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] Failed to connect to MQTT broker, return code {reason_code}")
 
+TERMINAL_STATUSES = {
+    "transmission_complete", "transmission_failed",
+    "error_no_file", "error_transmission_busy",
+    "bootload_complete", "bootload_failed",
+}
+
 def on_message(client, userdata, msg):
     """Callback for MQTT message reception"""
-    global progress_received
+    global progress_received, transmission_done, last_progress_time
 
     try:
-        # Safely handle message topic and payload
         topic = getattr(msg, 'topic', 'unknown')
         payload_bytes = getattr(msg, 'payload', b'')
 
         if topic == TOPIC_DEVICE_FOTA_PROGRESS:
-            # Handle both JSON and plain text payloads with robust error handling
             try:
                 payload = payload_bytes.decode('utf-8', errors='replace')
             except (UnicodeDecodeError, AttributeError):
@@ -65,26 +71,30 @@ def on_message(client, userdata, msg):
 
             if payload and payload.strip():
                 try:
-                    # Try to parse as JSON first
                     progress_data = json.loads(payload)
                     status = progress_data.get("status", "unknown")
+                    percent = progress_data.get("percent", None)
                     line = progress_data.get("line", 0)
-                    timestamp = progress_data.get("timestamp", 0)
 
-                    print(f"[{datetime.now().strftime('%H:%M:%S')}] PROGRESS: {status}", end="")
-                    if line > 0:
-                        print(f" (line {line})", end="")
-                    print()
+                    ts = datetime.now().strftime('%H:%M:%S')
+
+                    if status == "progress" and percent is not None:
+                        bar = "#" * (percent // 10) + "-" * (10 - percent // 10)
+                        print(f"[{ts}] [{bar}] {percent}%")
+                    else:
+                        print(f"[{ts}] STATUS: {status}", end="")
+                        if line > 0:
+                            print(f" (line {line})", end="")
+                        print()
 
                     progress_received = True
+                    last_progress_time = time.time()
 
-                    # Check for completion or failure
-                    if status in ["transmission_complete", "transmission_failed", "error_no_file", "error_transmission_busy"]:
-                        print(f"[{datetime.now().strftime('%H:%M:%S')}] Transmission finished with status: {status}")
-                        return "complete"
+                    if status in TERMINAL_STATUSES:
+                        print(f"[{ts}] Transmission finished: {status}")
+                        transmission_done = True
 
                 except (json.JSONDecodeError, ValueError, TypeError):
-                    # Handle as plain text
                     clean_payload = payload.strip()
                     if clean_payload:
                         print(f"[{datetime.now().strftime('%H:%M:%S')}] PROGRESS: {clean_payload}")
@@ -94,10 +104,9 @@ def on_message(client, userdata, msg):
 
     except Exception as e:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] Error processing progress message: {e}")
-        # Safer logging of message details
         try:
             topic_safe = getattr(msg, 'topic', 'N/A')
-            payload_safe = str(getattr(msg, 'payload', b'N/A'))[:100]  # Limit length
+            payload_safe = str(getattr(msg, 'payload', b'N/A'))[:100]
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Raw message: topic='{topic_safe}', payload='{payload_safe}...'")
         except:
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Could not safely log message details")
@@ -108,7 +117,12 @@ def on_publish(client, userdata, mid, reason_code=None, properties=None):
 
 def publish_bootload_command(transport="serial"):
     """Publish FOTA bootload command"""
-    global connected, progress_received
+    global connected, progress_received, transmission_done, last_progress_time
+
+    connected = False
+    progress_received = False
+    transmission_done = False
+    last_progress_time = 0.0
 
     print("=" * 60)
     print("FOTA Bootload Transport Publisher")
@@ -174,45 +188,23 @@ def publish_bootload_command(transport="serial"):
         # Wait for publish confirmation
         time.sleep(1)
 
-        # Monitor progress if enabled
+        # Monitor progress if enabled.
+        # loop_start() already runs the MQTT network loop in a background thread,
+        # so we just sleep here and wait for on_message() to set our flags.
         if WAIT_FOR_PROGRESS:
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Monitoring progress (timeout: {PROGRESS_TIMEOUT}s)...")
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Press Ctrl+C to stop monitoring")
 
             start_time = time.time()
-            last_progress_time = time.time()
-
-            consecutive_errors = 0
-            max_consecutive_errors = 10
 
             while time.time() - start_time < PROGRESS_TIMEOUT:
-                try:
-                    # Use loop with comprehensive error handling
-                    client.loop(timeout=0.5)
-                    consecutive_errors = 0  # Reset error counter on success
+                if transmission_done:
+                    break
 
-                except Exception as loop_e:
-                    consecutive_errors += 1
-                    error_msg = str(loop_e)
-
-                    # Only log non-protocol errors to reduce noise
-                    if "struct.error" not in error_msg and "Unrecognised command" not in error_msg:
-                        print(f"[{datetime.now().strftime('%H:%M:%S')}] MQTT loop error #{consecutive_errors}: {error_msg}")
-
-                    # Exit if too many consecutive errors
-                    if consecutive_errors >= max_consecutive_errors:
-                        print(f"[{datetime.now().strftime('%H:%M:%S')}] Too many MQTT errors, stopping monitoring")
-                        break
-
-                    time.sleep(1.0)  # Longer pause after error
-                    continue
-
-                # Check if we received progress recently
-                if progress_received and (time.time() - last_progress_time > 30):
+                if progress_received and last_progress_time > 0 and (time.time() - last_progress_time > 30):
                     print(f"[{datetime.now().strftime('%H:%M:%S')}] No progress updates for 30 seconds, continuing to monitor...")
-                    last_progress_time = time.time()
 
-                time.sleep(0.2)  # Slightly longer sleep for stability
+                time.sleep(0.5)
 
             if not progress_received:
                 print(f"[{datetime.now().strftime('%H:%M:%S')}] No progress messages received within timeout period")
@@ -231,8 +223,8 @@ def publish_bootload_command(transport="serial"):
 
     finally:
         try:
-            client.loop_stop()
-            client.disconnect()
+            client.disconnect()   # closes socket → unblocks background thread immediately
+            client.loop_stop()    # joins thread (now exits fast)
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Disconnected from MQTT broker")
         except Exception as cleanup_e:
             print(f"[{datetime.now().strftime('%H:%M:%S')}] Warning: Error during cleanup: {cleanup_e}")

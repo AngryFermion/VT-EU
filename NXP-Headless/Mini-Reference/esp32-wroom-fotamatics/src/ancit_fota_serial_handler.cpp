@@ -68,6 +68,9 @@ void AncitFotaSerialHandler::transmitFotaFile() {
   // Reset file position to beginning
   fotaFile.seek(0);
 
+  size_t fileSize = fotaFile.size();
+  int lastReportedDecile = 0;
+
   String line = "";
   bool transmissionFailed = false;
 
@@ -86,11 +89,6 @@ void AncitFotaSerialHandler::transmitFotaFile() {
       if (line.length() > 0 && line.startsWith("S")) {
         totalLines++;
         currentLine = totalLines;
-
-        // Publish progress for first line only
-        if (totalLines == 1 && onProgressCallback) {
-          onProgressCallback("line_ok", totalLines);
-        }
 
         // Check if this is a metadata record (S1 or S5) that doesn't need acknowledgment
         bool isMetadataRecord = (line.startsWith("S1") || line.startsWith("S5"));
@@ -136,6 +134,16 @@ void AncitFotaSerialHandler::transmitFotaFile() {
           break;
         }
 
+        // Fire progress callback at each 10% boundary using file position as proxy
+        if (fileSize > 0) {
+          int pct = (int)((fotaFile.position() * 100UL) / fileSize);
+          int decile = pct / 10;
+          if (decile > lastReportedDecile) {
+            lastReportedDecile = decile;
+            if (onProgressCallback) onProgressCallback("progress", decile * 10);
+          }
+        }
+
         delay(FOTA_TRANSMISSION_DELAY);
       }
       line = "";
@@ -170,11 +178,6 @@ void AncitFotaSerialHandler::transmitFotaFile() {
   } else {
     g_Logger.Write(LogLevel::Debug, LogCategory::SER, "AncitFotaSerialHandler::transmitFotaFile",
                      "FOTA transmission completed successfully - %d lines sent", totalLines);
-
-    // Report last line progress if more than 1 line was transmitted
-    if (totalLines > 1 && onProgressCallback) {
-      onProgressCallback("line_ok", totalLines);
-    }
 
     if (onProgressCallback) onProgressCallback("transmission_complete", totalLines);
     netLed->setState(LedMode::BLINK_ONCE, LedColor::GREEN);

@@ -656,6 +656,13 @@ body {
 
 .fota-log.hide-errors .log-line-error { display: none; }
 
+.log-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
 .diag-toggle-label {
   display: flex;
   align-items: center;
@@ -663,8 +670,8 @@ body {
   font-size: 11px;
   color: var(--text-muted);
   cursor: pointer;
-  margin-left: auto;
   user-select: none;
+  white-space: nowrap;
 }
 
 .diag-toggle-label:hover { color: var(--text-dim); }
@@ -672,6 +679,15 @@ body {
 .diag-toggle-label input[type="checkbox"] {
   accent-color: var(--r1);
   cursor: pointer;
+}
+
+/* Log hidden state — takes zero height, no border, no padding */
+.fota-log[style*="display:none"],
+.fota-log[style*="display: none"] {
+  height: 0;
+  padding: 0;
+  border: none;
+  margin: 0;
 }
 
 /* ── CI/CD Pipeline ─────────────────────────────────────────── */

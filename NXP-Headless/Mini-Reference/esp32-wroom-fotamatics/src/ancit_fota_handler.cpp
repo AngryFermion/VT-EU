@@ -478,11 +478,12 @@ void fota_serial_progress_callback(const String& status, int lineCount) {
   progressDoc["status"] = status;
   progressDoc["timestamp"] = millis();
 
-  // Check if this is a bootload sequence step (status starts with "bootload_")
-  if (status.startsWith("bootload_") && lineCount > 0) {
-    progressDoc["sequence"] = lineCount;  // Use lineCount as sequence number for bootload steps
+  if (status == "progress") {
+    progressDoc["percent"] = lineCount;   // lineCount carries the % value (10, 20, ... 100)
+  } else if (status.startsWith("bootload_") && lineCount > 0) {
+    progressDoc["sequence"] = lineCount;
   } else if (lineCount > 0) {
-    progressDoc["line"] = lineCount;      // Use as line number for file transfer
+    progressDoc["line"] = lineCount;
   }
 
   String progressPayload;

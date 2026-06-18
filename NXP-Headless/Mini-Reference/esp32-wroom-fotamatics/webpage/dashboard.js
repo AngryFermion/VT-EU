@@ -328,7 +328,23 @@ function handleMsg(topic, data) {
   }
 
   if (topic.includes('/fota/progress')) {
-    logFota(data.status || JSON.stringify(data), 'bootload');
+    const status = data.status;
+    if (status === 'progress' && data.percent != null) {
+      // Drive the progress bar directly from the ESP32's 10% increments (mapped to 40–88% bar range)
+      const pct = data.percent;
+      const barPct = 40 + pct * 0.48;
+      document.getElementById('fota-bar').style.width = barPct + '%';
+      document.getElementById('fota-progress-lbl').textContent = `Bootloading S32K144… ${pct}%`;
+    } else if (status === 'bootload_complete') {
+      // ESP32 confirmed bootload done — drive pipeline straight to done, no intermediate active
+      setStage(4, 'done');
+      setStage(5, 'done');
+      document.getElementById('fota-bar').style.width = '100%';
+      document.getElementById('fota-progress-lbl').textContent = 'S32K144 bootload complete ✓';
+      logFota('Bootload complete — S32K144 running new firmware', 'complete');
+    } else if (status && status !== 'progress') {
+      logFota(status, 'bootload');
+    }
   }
 }
 
@@ -350,6 +366,10 @@ function logFota(msg, cls) {
   line.innerHTML = `<span class="log-ts">[${ts}]</span><span class="${cls ? 'log-' + cls : ''}">${esc(msg)}</span>`;
   log.appendChild(line);
   log.scrollTop = log.scrollHeight;
+}
+
+function toggleLog(show) {
+  document.getElementById('fota-log').style.display = show ? 'block' : 'none';
 }
 
 function toggleDiagnostics(show) {
@@ -435,6 +455,10 @@ async function triggerFota(n) {
   const verRaw  = verSel.value;
   if (!verRaw) { logFota('No firmware version selected.', 'error'); return; }
 
+  // Auto-show log when FOTA starts so the user sees output without ticking manually
+  const logToggle = document.getElementById('log-toggle');
+  if (!logToggle.checked) { logToggle.checked = true; toggleLog(true); }
+
   const release    = JSON.parse(verRaw);
   const targetVin  = n === 1 ? VIN_ALPHA : VIN_BETA;
   const roverName  = n === 1 ? 'Alpha' : 'Beta';
@@ -501,9 +525,16 @@ async function triggerFota(n) {
       es.close();
       fotaBusy[n] = false;
       btn.disabled = false;
-      progBar.style.width = '100%';
-      progLbl.textContent = `Rover ${roverName} — Complete ✓`;
-      runPipeline(uploadDone, bootDone);
+      // If MQTT bootload_complete already completed the pipeline, don't replay the animation
+      // (replaying would reset stage 5 back to active and create the stuck-state race)
+      if (document.getElementById('stage-5').classList.contains('done')) {
+        progBar.style.width = '100%';
+        progLbl.textContent = `Rover ${roverName} — Complete ✓`;
+      } else {
+        progBar.style.width = '100%';
+        progLbl.textContent = `Rover ${roverName} — Complete ✓`;
+        runPipeline(uploadDone, bootDone);
+      }
       return;
     }
 
@@ -516,17 +547,18 @@ async function triggerFota(n) {
       uploadDone = true;
     }
     if (stage === 'bootload') {
-      progBar.style.width = '60%';
-      progLbl.textContent = 'Bootloading S32K144 via UART…';
-      setStage(3, 'done');
-      setStage(4, 'active');
-      bootDone = true;
+      if (!bootDone) {
+        // Set initial bar position once; fine-grained updates come from MQTT WebSocket
+        progBar.style.width = '40%';
+        progLbl.textContent = 'Bootloading S32K144 via UART…';
+        setStage(3, 'done');
+        setStage(4, 'active');
+        bootDone = true;
+      }
     }
     if (stage === 'complete') {
-      progBar.style.width = '88%';
-      progLbl.textContent = 'Verifying VIN ACK…';
-      setStage(4, 'done');
-      setStage(5, 'active');
+      progBar.style.width = '95%';
+      progLbl.textContent = 'Finalising…';
     }
     if (stage === 'error') {
       es.close();

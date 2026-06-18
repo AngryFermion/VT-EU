@@ -219,10 +219,16 @@
     <div class="section-header">
       <h2 class="section-title"><span class="section-icon">⬆</span> FOTA Progress &amp; Log</h2>
       <span class="section-sub">FaaS · S32K144 UART Bootloader · trigger from each rover card above</span>
-      <label class="diag-toggle-label">
-        <input type="checkbox" id="diag-toggle" onchange="toggleDiagnostics(this.checked)">
-        Show diagnostics
-      </label>
+      <div class="log-toggle-group">
+        <label class="diag-toggle-label">
+          <input type="checkbox" id="log-toggle" onchange="toggleLog(this.checked)">
+          Show log
+        </label>
+        <label class="diag-toggle-label">
+          <input type="checkbox" id="diag-toggle" onchange="toggleDiagnostics(this.checked)">
+          Show diagnostics
+        </label>
+      </div>
     </div>
 
     <div id="fota-progress-wrap" class="fota-progress-wrap" style="display:none">
@@ -232,7 +238,7 @@
       <span class="fota-progress-lbl" id="fota-progress-lbl">Preparing…</span>
     </div>
 
-    <div class="fota-log hide-errors" id="fota-log">
+    <div class="fota-log hide-errors" id="fota-log" style="display:none">
       <span class="log-placeholder">FOTA log will appear here — start server.py and trigger FOTA above.</span>
     </div>
   </div>
