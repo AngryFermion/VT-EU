@@ -31,6 +31,9 @@ C_SOURCE_DIRS = [
     Path("ancit_lib/UART"),
     Path("ancit_lib/Ultrasonic"),
     Path("ancit_lib/i2c"),
+    Path("ancit_fota"),
+    Path("ancit_boot/BootMgr"),
+    Path("ancit_boot/NvmMgr"),
     Path("board"),
     Path("SDK/platform"),
     Path("SDK/rtos/osif"),
@@ -186,6 +189,9 @@ INCLUDES := \\
   -I./board \\
   -I./src \\
   -I./ancit_device_drivers \\
+  -I./ancit_fota \\
+  -I./ancit_boot/BootMgr \\
+  -I./ancit_boot/NvmMgr \\
   -I./ancit_lib/Digital \\
   -I./ancit_lib/Others \\
   -I./ancit_lib/Timers \\

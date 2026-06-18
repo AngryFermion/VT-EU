@@ -60,6 +60,9 @@ INCLUDES := \
   -I./board \
   -I./src \
   -I./ancit_device_drivers \
+  -I./ancit_fota \
+  -I./ancit_boot/BootMgr \
+  -I./ancit_boot/NvmMgr \
   -I./ancit_lib/Digital \
   -I./ancit_lib/Others \
   -I./ancit_lib/Timers \
@@ -124,8 +127,15 @@ C_SOURCES := \
 	SDK/platform/drivers/src/lpuart/lpuart_hw_access.c \
 	SDK/platform/drivers/src/lpuart/lpuart_irq.c \
 	SDK/rtos/osif/osif_baremetal.c \
+	ancit_boot/BootMgr/UdsBootMgr.c \
+	ancit_boot/NvmMgr/UdsNvmMgr.c \
+	ancit_device_drivers/ancit_driver_digital_io.c \
 	ancit_device_drivers/ancit_driver_timer.c \
 	ancit_device_drivers/ancit_driver_uart.c \
+	ancit_fota/fota_uart.c \
+	ancit_fota/fota_uart_config.c \
+	ancit_fota/fota_utils.c \
+	ancit_lib/Digital/ancit_di.c \
 	ancit_lib/Digital/ancit_pwm.c \
 	ancit_lib/Others/ancit_common.c \
 	ancit_lib/Timers/ancit_scheduler.c \

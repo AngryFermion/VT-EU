@@ -14,6 +14,7 @@
 
 #include "ancit_timer.h"
 #include "genx_common.h"
+#include "fota_uart.h"
 
 #ifdef UART_RTE_CONFIGURED
 
@@ -25,11 +26,8 @@ static char currentString[MAX_STRING_LENGTH];
 static uint8_t currentStringLength;
 
 // ── RX state ────────────────────────────────────────────────────────────────
-static uint8_t rx_byte;
-static char rx_cmd_buffer[MAX_RX_CMD_LENGTH];
-static uint8_t rx_cmd_idx = 0;
-static volatile uint8_t rx_frame_ready = 0;
-static char rx_dispatch_buf[MAX_RX_CMD_LENGTH];
+static uint8_t fota_rx_phase = 0;
+static volatile uint8_t fota_rx_ready = 0;
 
 // ── TX state machine ─────────────────────────────────────────────────────────
 void ancit_uart_conn_sm(void) {
@@ -70,25 +68,26 @@ void ancit_uart_conn_sm(void) {
 
 // ── RX byte callback (called from LPUART ISR) ─────────────────────────────
 void ancit_uart_rx_byte_cb(void *driverState, uart_event_t event, void *param) {
+
 	(void)driverState;
 	(void)param;
 
 	if (event == UART_EVENT_RX_FULL) {
-		char c = (char)rx_byte;
-		if (c == RX_CMD_DELIMITER || rx_cmd_idx >= MAX_RX_CMD_LENGTH - 1) {
-			// Strip trailing \r if present
-			if (rx_cmd_idx > 0 && rx_cmd_buffer[rx_cmd_idx - 1] == '\r') {
-				rx_cmd_idx--;
+		if (fota_rx_phase == 0) {
+			if (UartData.rx_data[1] == TYPE_0 || UartData.rx_data[1] == TYPE_5) {
+				fota_rx_ready = 1;
+				ancit_driver_uart_ReceiveData(EXT_UART, &UartData.rx_data[0], 2);
+			} else {
+				fota_rx_phase = 1;
+				ancit_driver_uart_ReceiveData(EXT_UART, &UartData.rx_data[2], UART_BUFF_LEN - 2);
 			}
-			rx_cmd_buffer[rx_cmd_idx] = '\0';
-			rx_cmd_idx = 0;
-			rx_frame_ready = 1;
-		} else if (c != '\r') {
-			rx_cmd_buffer[rx_cmd_idx++] = c;
+		} else {
+			fota_rx_phase = 0;
+			fota_rx_ready = 1;
+			ancit_driver_uart_ReceiveData(EXT_UART, &UartData.rx_data[0], 2);
 		}
-		// Re-arm for next byte
-		ancit_driver_uart_ReceiveData(EXT_UART, &rx_byte, 1);
 	}
+
 }
 
 // ── Command dispatcher ────────────────────────────────────────────────────────
@@ -129,7 +128,7 @@ void ancit_uart_conn_start(void) {
 
 	// Install RX callback and arm for first byte
 	ancit_driver_uart_InstallRxCallback(EXT_UART, ancit_uart_rx_byte_cb, NULL);
-	ancit_driver_uart_ReceiveData(EXT_UART, &rx_byte, 1);
+	ancit_driver_uart_ReceiveData(EXT_UART, &UartData.rx_data[0], 2);
 
 #ifdef DWIN_DISPLAY_CONFIGURED
 	ancit_dwin_tx_start();
@@ -143,11 +142,10 @@ void ancit_uart_conn_main(void) {
 	ancit_dwin_rx_main();
 #endif
 
-	// Process any complete RX command frame
-	if (rx_frame_ready) {
-		memcpy(rx_dispatch_buf, rx_cmd_buffer, MAX_RX_CMD_LENGTH);
-		rx_frame_ready = 0;
-		ancit_uart_cmd_dispatch(rx_dispatch_buf);
+	if (fota_rx_ready) {
+		fota_rx_ready = 0;
+		fota_pre_process();
+		fota_process_data();
 	}
 
 	ancit_uart_conn_sm();
