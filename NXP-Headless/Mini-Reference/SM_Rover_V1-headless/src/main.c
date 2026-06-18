@@ -53,6 +53,7 @@
 #include "genx_i2c_manager.h"
 #endif
 #include "genx_ultrason.h"
+#include "fota_uart.h"
 
 volatile int exit_code = 0;
 
@@ -94,6 +95,8 @@ int main(void) {
 	/* Initialize Simulink model */
 	ANCIT_App_Init();
 #endif /* SIMULINK_BRIDGE_CONFIGURED */
+	Uds_NvmMgr_init();
+	UDS_BootManager_init();
 
 	/***********************************************
 	 * ANCIT_CG_Init_End
@@ -121,6 +124,10 @@ ancit_uart_conn_main();
 #endif
 
     Task_While();
+
+	fota_uart_tx_sm();
+	Uds_NvmMgr_sm();
+	UDS_BootManager_sm();
 
 		//Toggle the Debug Pin PTD8 to indicate end of main loop
 		//Toggles every main loop execution
