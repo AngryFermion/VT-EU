@@ -21,7 +21,7 @@ const MQTT_OPTS = {
 
 // VIN identifiers — must match TELEMATICS_DEVICE_ID in telematics_config.h
 const VIN_ALPHA = 'MA3ZZ20G0T1234567';
-const VIN_BETA  = 'WROOM_002';
+const VIN_BETA  = 'MB3ZZ20G0T5566007';
 
 // Topics matching the ESP32 firmware (telematics_config.h, ancit_mqtt_client.cpp)
 const T_TELEM   = 'SmartKit/Ultra';
@@ -95,15 +95,14 @@ function setGauge(n, speed) {
 }
 
 // ── Rover state ───────────────────────────────────────────────────────────────
-// Rover 1 (Alpha) = real ESP32 device — no local simulation, waits for MQTT.
-// Rover 2 (Beta)  = demo simulation until a real WROOM_002 device appears.
+// Both rovers use real ESP32 data — no local simulation, wait for MQTT.
 const rovers = {
   1: { speed: 0, rpm: 0, throttle: 0, brake: 0, steering: 0, distance: 0,
        isLive: false, lastSeen: 0, lastVinBeat: 0, view: DEFAULT_SIGNAL_VIEW,
        sim: { spd: { val: 0, tgt: 0, t: 0 }, dst: { val: 0, tgt: 0, t: 0 } } },
-  2: { speed: 0, rpm: 0, throttle: 0, brake: 0, steering: 0, distance: 150,
+  2: { speed: 0, rpm: 0, throttle: 0, brake: 0, steering: 0, distance: 0,
        isLive: false, lastSeen: 0, lastVinBeat: 0, view: DEFAULT_SIGNAL_VIEW,
-       sim: { spd: { val: 55, tgt: 55, t: 0 }, dst: { val: 150, tgt: 150, t: 0 } } }
+       sim: { spd: { val: 0, tgt: 0, t: 0 }, dst: { val: 0, tgt: 0, t: 0 } } }
 };
 
 // ── DOM helpers ───────────────────────────────────────────────────────────────
@@ -118,8 +117,7 @@ function setText(id, v) { document.getElementById(id).textContent = v; }
 function updateUI(n) {
   const s = rovers[n];
 
-  // Rover Alpha (n=1) shows dashes until the first real MQTT message arrives.
-  const waiting = (n === 1 && !s.isLive);
+  const waiting = !s.isLive;
 
   setGauge(n, waiting ? 0 : s.speed);
   setText(`speed-num-${n}`, waiting ? '—' : Math.round(s.speed));
@@ -205,7 +203,8 @@ function monitorHealth() {
 
     // ref===0 means this rover has never sent a message
     if (ref === 0) {
-      if (n === 1) setHealth(1, 'warn', `Waiting for VIN ${VIN_ALPHA}…`);
+      const vin = n === 1 ? VIN_ALPHA : VIN_BETA;
+      setHealth(n, 'warn', `Waiting for VIN ${vin}…`);
       return;
     }
 
@@ -222,42 +221,8 @@ function monitorHealth() {
   });
 }
 
-// ── Demo simulation (Rover Beta only) ────────────────────────────────────────
-function stepSim(n) {
-  if (n === 1) return;  // Rover Alpha always uses real MQTT data — no local sim
-  const s = rovers[n];
-  if (s.isLive) return;
-
-  const now = Date.now();
-  const sim = s.sim;
-
-  // New speed target every 4–8 s (stagger rovers)
-  if (now - sim.spd.t > 4000 + n * 1200 + Math.random() * 4000) {
-    sim.spd.tgt = 15 + Math.random() * 75;
-    sim.spd.t   = now;
-  }
-  // New distance target every 2–5 s
-  if (now - sim.dst.t > 2000 + Math.random() * 3000) {
-    sim.dst.tgt = 30 + Math.random() * 350;
-    sim.dst.t   = now;
-  }
-  // ACC: braking when obstacle close
-  if (sim.dst.val < 60) sim.spd.tgt = Math.max(0, sim.spd.tgt * 0.5);
-
-  // Smooth exponential approach
-  sim.spd.val += (sim.spd.tgt - sim.spd.val) * 0.04;
-  sim.dst.val += (sim.dst.tgt - sim.dst.val) * 0.05;
-
-  s.speed    = Math.max(0, sim.spd.val + (Math.random() - 0.5) * 1.5);
-  s.distance = Math.max(5, sim.dst.val + (Math.random() - 0.5) * 4);
-  s.rpm      = Math.max(0, s.speed * 47 + (Math.random() - 0.5) * 60);
-  s.throttle = Math.max(0, Math.min(100, (s.speed / 80) * 80 + (Math.random() - 0.5) * 8));
-  s.brake    = s.distance < 60 ? Math.min(100, (60 - s.distance) * 1.8) : 0;
-  s.steering = Math.sin(now / 4500 + n * 1.8) * 18 + (Math.random() - 0.5) * 4;
-
-  // VIN heartbeat every 10 s
-  if (now - s.lastVinBeat > 10000) bumpVin(n);
-}
+// ── Demo simulation — disabled; both rovers use real MQTT data ───────────────
+function stepSim(_n) {}
 
 function animLoop() {
   [1, 2].forEach(n => { stepSim(n); updateUI(n); });
@@ -658,11 +623,12 @@ function init() {
   setHealth(1, 'warn', `Waiting for VIN ${VIN_ALPHA}…`);
   setText('vin-beat-1', 'waiting for MQTT…');
 
-  // Rover Beta: demo mode — sim runs, health starts online
+  // Rover Beta: wait for real ESP32 data — no sim, no fake "online" state
   rovers[2].sim.spd.t = now;
   rovers[2].sim.dst.t = now;
-  rovers[2].lastVinBeat = now;
-  setHealth(2, 'online', 'Demo mode');
+  rovers[2].lastVinBeat = 0;
+  setHealth(2, 'warn', `Waiting for VIN ${VIN_BETA}…`);
+  setText('vin-beat-2', 'waiting for MQTT…');
 
   applyView(1);
   applyView(2);
