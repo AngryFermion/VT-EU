@@ -11,8 +11,9 @@ variables:
   NXP_K144_RTM: "$CI_PROJECT_DIR/RTM/S32SDK_S32K1XX_RTM_4.0.1"
   S32DS_ROOT_DIR: "$CI_PROJECT_DIR/GCC"
 
+  VARIANT: "ACC_VARIANT"   # override at pipeline trigger: ACC_VARIANT or BASIC_VARIANT
   PACKAGE_NAME: "smartwheels-s32k144-sm-rover"
-  PACKAGE_VERSION: "1.0.${CI_PIPELINE_IID}"
+  PACKAGE_VERSION: "1.0.${CI_PIPELINE_IID}-${VARIANT}"
   FIRMWARE_FILE: "Image_SM_Rover_V1_padded.srec"
   PROJECT_BUILD_DIR: "$CI_PROJECT_DIR/NXP_Dev/VT-EU/NXP-Headless/Mini-Reference/SM_Rover_V1-headless"
   FIRMWARE_DIR: "$CI_PROJECT_DIR/NXP_Dev/VT-EU/NXP-Headless/Mini-Reference/SM_Rover_V1-headless/build/target"
@@ -85,7 +86,7 @@ Build ECU:
     - ls -lh
 
     - mkdir -p build
-    - python3 gl_script_build.py
+    - python3 gl_script_build.py $VARIANT
 
     - cd build
     - mkdir -p temp target

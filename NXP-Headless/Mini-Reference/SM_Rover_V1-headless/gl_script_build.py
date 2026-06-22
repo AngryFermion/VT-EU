@@ -1,5 +1,6 @@
 from pathlib import Path
 import subprocess
+import sys
 import os
 
 #If this script is executing via Jenkins, then it expects
@@ -7,6 +8,16 @@ import os
 
 MAKE = r"C:\NXP\S32DS.3.5\S32DS\build_tools\msys32\usr\bin\make.exe"
 MSYS32_BIN = r"C:\NXP\S32DS.3.5\S32DS\build_tools\msys32\usr\bin"
+
+VALID_VARIANTS = {"ACC_VARIANT", "BASIC_VARIANT"}
+
+# Source files that are only compiled when ACC logic is active.
+# These are excluded from the Makefile when building BASIC_VARIANT.
+ACC_ONLY_SOURCES = {
+    "src/ACC.c",
+    "src/ACC_data.c",
+    "src/genx_simulink_bridge.c",
+}
 
 # Always operate from the directory that contains this script,
 # regardless of where the user invokes it from.
@@ -283,11 +294,29 @@ def flash_with_jlink(elf_path: Path):
 # ==== Final Makefile Generation + Build + Flash ====
 def main():
 
-    nxp_path = validate_env_vars()
+    if len(sys.argv) < 2 or sys.argv[1] not in VALID_VARIANTS:
+        print(f"[error] Usage: python gl_script_build.py <VARIANT>")
+        print(f"        VARIANT must be one of: {', '.join(sorted(VALID_VARIANTS))}")
+        print(f"  e.g.: python gl_script_build.py ACC_VARIANT")
+        print(f"        python gl_script_build.py BASIC_VARIANT")
+        exit(1)
+
+    variant = sys.argv[1]
+    print(f"[info] Building variant: {variant}\n")
+
+    # nxp_path = validate_env_vars()
     local_files = collect_c_sources(C_SOURCE_DIRS)
+
+    if variant == "BASIC_VARIANT":
+        before = len(local_files)
+        local_files = [f for f in local_files if f not in ACC_ONLY_SOURCES]
+        print(f"[info] BASIC_VARIANT: excluded {before - len(local_files)} ACC source file(s): {ACC_ONLY_SOURCES}\n")
+
     c_block = format_c_sources_block(RTM_C_SOURCES, local_files)
 
-    full_makefile = f"{makefile_prefix}\n\n# ==== Source files ====\n{c_block}\n\n{static_tail}"
+    # Inject the variant define after the static prefix, before the source list
+    variant_line = f"CFLAGS += -D{variant}"
+    full_makefile = f"{makefile_prefix}\n{variant_line}\n\n# ==== Source files ====\n{c_block}\n\n{static_tail}"
     Path("Makefile").write_text(full_makefile, encoding="utf-8")
     print("Makefile generated successfully.\n")
     print("Running Make\n")
