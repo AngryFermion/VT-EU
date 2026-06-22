@@ -23,6 +23,8 @@
 #ifndef GENX_COMMON_H_
 #define GENX_COMMON_H_
 #include "stdint.h"
+
+/* Select exactly one variant via compiler flag: -DACC_VARIANT or -DBASIC_VARIANT */
 typedef struct {
 	uint16_t Ultra_Distance;
 	uint8_t Vset;

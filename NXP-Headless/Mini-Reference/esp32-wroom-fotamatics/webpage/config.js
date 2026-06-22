@@ -7,4 +7,8 @@
 // Tunnel URL (see README for setup). Example:
 //   var SW_API_BASE = 'https://smartwheels.your-domain.com';
 //
-var SW_API_BASE = '';
+// Point to your local server.py when running FOTA from the hosted website.
+// Start server.py first:  python webpage/server.py
+// Then visit https://www.ancitconsulting.com/telematics/ — FOTA will reach
+// http://localhost:5000 on your machine via Private Network Access.
+var SW_API_BASE = 'http://localhost:5000';

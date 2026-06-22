@@ -76,6 +76,16 @@ if(mode == 4 && state == 1){
 }
 #endif
 #endif /* SIMULINK_BRIDGE_CONFIGURED */
+
+#ifdef BASIC_VARIANT
+if(mode == 4 && state == 1){
+	ggenx.PWM = ggenx.Vset;
+	genx_PWM_LFM_updateDutyCycle(100);
+	genx_PWM_LBM_updateDutyCycle(100 - (ggenx.PWM/2));
+	genx_PWM_RFM_updateDutyCycle(100);
+	genx_PWM_RBM_updateDutyCycle(100 - (ggenx.PWM/2));
+}
+#endif
 } 
 
 void Task_10ms(void) {
@@ -106,13 +116,18 @@ void Task_10ms(void) {
 		if(mode == 4){
 			ancit_uart_message_setup();
 		}
-	#endif
 		else{
 			genx_PWM_LFM_updateDutyCycle(100);
 			genx_PWM_LBM_updateDutyCycle(100);
 			genx_PWM_RFM_updateDutyCycle(100);
 			genx_PWM_RBM_updateDutyCycle(100);
 		}
+	#endif
+	#ifdef BASIC_VARIANT
+		if(mode == 4){
+			ancit_uart_message_setup();
+		}
+	#endif
 	}
 	else{
 		genx_PWM_LFM_updateDutyCycle(100);

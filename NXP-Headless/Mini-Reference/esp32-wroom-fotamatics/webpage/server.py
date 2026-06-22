@@ -105,6 +105,8 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        # Chrome Private Network Access: allow HTTPS pages to fetch from http://localhost
+        self.send_header('Access-Control-Allow-Private-Network', 'true')
 
     def _json(self, data, status=200):
         body = json.dumps(data).encode()

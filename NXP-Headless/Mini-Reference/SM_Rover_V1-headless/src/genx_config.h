@@ -67,14 +67,21 @@
 
 //#define TELEMATICS_CONFIGURED 
 
-#define SIMULINK_BRIDGE_CONFIGURED 
+//#define SIMULINK_BRIDGE_CONFIGURED
 
-//#define AUTOSAR_CONFIGURED 
+//#define AUTOSAR_CONFIGURED
 
-//#define ANCIT_CAN_GATEWAY_ENABLED 
+//#define ANCIT_CAN_GATEWAY_ENABLED
 #define ULTRASONIC_CONFIGURED
 
-#define ADAS_USECASE_CONFIGURED
+//#define ADAS_USECASE_CONFIGURED
+
+#if defined(ACC_VARIANT)
+  #define SIMULINK_BRIDGE_CONFIGURED
+  #define ADAS_USECASE_CONFIGURED
+#elif !defined(BASIC_VARIANT)
+  #error "No variant defined — pass -DBASIC_VARIANT or -DACC_VARIANT to CFLAGS"
+#endif
 /***********************************************
  * ANCIT_Peripheral_Enablement_Stop
  ***********************************************/

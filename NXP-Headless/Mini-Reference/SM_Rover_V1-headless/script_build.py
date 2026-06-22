@@ -10,6 +10,16 @@ MAKE     = r"C:\NXP\S32DS.3.5\S32DS\build_tools\msys32\usr\bin\make.exe"
 MSYS32_BIN = r"C:\NXP\S32DS.3.5\S32DS\build_tools\msys32\usr\bin"
 SREC_CAT = r"C:\Program Files\srecord\bin\srec_cat.exe"
 
+VALID_VARIANTS = {"ACC_VARIANT", "BASIC_VARIANT"}
+
+# Source files that are only compiled when ACC logic is active.
+# These are excluded from the Makefile when building BASIC_VARIANT.
+ACC_ONLY_SOURCES = {
+    "src/ACC.c",
+    "src/ACC_data.c",
+    "src/genx_simulink_bridge.c",
+}
+
 # Always operate from the directory that contains this script,
 # regardless of where the user invokes it from.
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -288,7 +298,7 @@ def flash_with_jlink(elf_path: Path):
     run_command(" ".join(cmd), "Flashing ELF with J-Link")
 
 # ==== SREC post-processing ====
-def srec_process(project_name: str):
+def srec_process(project_name: str, variant: str):
     build_dir   = Path("build")
     temp_dir    = build_dir / "temp"
     target_dir  = build_dir / "target"
@@ -297,7 +307,7 @@ def srec_process(project_name: str):
 
     input_srec  = build_dir  / f"{project_name}.srec"
     temp_srec   = temp_dir   / f"{project_name}_temp.srec"
-    output_srec = target_dir / f"Image_{project_name}_padded.srec"
+    output_srec = target_dir / f"Image_{project_name}_{variant}_padded.srec"
 
     srec_cat_cmd = (
         f'"{SREC_CAT}" "{input_srec}" -Motorola'
@@ -314,11 +324,29 @@ def srec_process(project_name: str):
 # ==== Final Makefile Generation + Build + Flash ====
 def main():
 
+    if len(sys.argv) < 2 or sys.argv[1] not in VALID_VARIANTS:
+        print(f"[error] Usage: python script_build.py <VARIANT>")
+        print(f"        VARIANT must be one of: {', '.join(sorted(VALID_VARIANTS))}")
+        print(f"  e.g.: python script_build.py ACC_VARIANT")
+        print(f"        python script_build.py BASIC_VARIANT")
+        exit(1)
+
+    variant = sys.argv[1]
+    print(f"[info] Building variant: {variant}\n")
+
     # nxp_path = validate_env_vars()
     local_files = collect_c_sources(C_SOURCE_DIRS)
+
+    if variant == "BASIC_VARIANT":
+        before = len(local_files)
+        local_files = [f for f in local_files if f not in ACC_ONLY_SOURCES]
+        print(f"[info] BASIC_VARIANT: excluded {before - len(local_files)} ACC source file(s): {ACC_ONLY_SOURCES}\n")
+
     c_block = format_c_sources_block(RTM_C_SOURCES, local_files)
 
-    full_makefile = f"{makefile_prefix}\n\n# ==== Source files ====\n{c_block}\n\n{static_tail}"
+    # Inject the variant define after the static prefix, before the source list
+    variant_line = f"CFLAGS += -D{variant}"
+    full_makefile = f"{makefile_prefix}\n{variant_line}\n\n# ==== Source files ====\n{c_block}\n\n{static_tail}"
     Path("Makefile").write_text(full_makefile, encoding="utf-8")
     print("Makefile generated successfully.\n")
     print("Running Make\n")
@@ -327,7 +355,7 @@ def main():
     run_command(f'"{MAKE}" clean', "Clean previous build")
     run_command(f'"{MAKE}"', "Build project")
     run_command(f'"{MAKE}" srec', "Generating SREC file")
-    srec_process("SM_Rover_V1")
+    srec_process("SM_Rover_V1", variant)
 
     # elf_file = Path("build") / "SM_Rover_V1.elf"
     # if elf_file.exists():

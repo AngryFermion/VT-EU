@@ -268,7 +268,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/startup.o
  .data          0x00000000        0x0 build/startup.o
  .bss           0x00000000        0x0 build/startup.o
- .debug_macro   0x00000000      0x8e0 build/startup.o
+ .debug_macro   0x00000000      0x8e6 build/startup.o
  .debug_macro   0x00000000       0x22 build/startup.o
  .debug_macro   0x00000000       0x56 build/startup.o
  .debug_macro   0x00000000       0x51 build/startup.o
@@ -322,7 +322,7 @@ Discarded input sections
                 0x00000000       0x10 build/clock_S32K1xx.o
  .rodata.sysClkDivMappings.7777
                 0x00000000       0x11 build/clock_S32K1xx.o
- .debug_macro   0x00000000      0x8e0 build/clock_S32K1xx.o
+ .debug_macro   0x00000000      0x8e6 build/clock_S32K1xx.o
  .debug_macro   0x00000000       0x10 build/clock_S32K1xx.o
  .debug_macro   0x00000000       0x79 build/clock_S32K1xx.o
  .debug_macro   0x00000000       0x19 build/clock_S32K1xx.o
@@ -364,7 +364,7 @@ Discarded input sections
                 0x00000000       0x2c build/interrupt_manager.o
  .text.INT_SYS_GetActive
                 0x00000000       0x2c build/interrupt_manager.o
- .debug_macro   0x00000000      0x8e0 build/interrupt_manager.o
+ .debug_macro   0x00000000      0x8e6 build/interrupt_manager.o
  .debug_macro   0x00000000       0x10 build/interrupt_manager.o
  .debug_macro   0x00000000       0x79 build/interrupt_manager.o
  .debug_macro   0x00000000       0x19 build/interrupt_manager.o
@@ -439,7 +439,7 @@ Discarded input sections
                 0x00000000        0x4 build/pins_driver.o
  .text.PINS_DRV_ReadPins
                 0x00000000        0x4 build/pins_driver.o
- .debug_macro   0x00000000      0x8e0 build/pins_driver.o
+ .debug_macro   0x00000000      0x8e6 build/pins_driver.o
  .debug_macro   0x00000000       0x10 build/pins_driver.o
  .debug_macro   0x00000000       0x79 build/pins_driver.o
  .debug_macro   0x00000000       0x19 build/pins_driver.o
@@ -476,7 +476,7 @@ Discarded input sections
                 0x00000000       0x2e build/pins_port_hw_access.o
  .text.PINS_SetGlobalIntControl
                 0x00000000       0x26 build/pins_port_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/pins_port_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/pins_port_hw_access.o
  .debug_macro   0x00000000      0x16d build/pins_port_hw_access.o
  .debug_macro   0x00000000       0x10 build/pins_port_hw_access.o
  .debug_macro   0x00000000       0x79 build/pins_port_hw_access.o
@@ -571,7 +571,7 @@ Discarded input sections
                 0x00000000       0xe8 build/adc_driver.o
  .debug_ranges  0x00000000      0x180 build/adc_driver.o
  .debug_macro   0x00000000       0xea build/adc_driver.o
- .debug_macro   0x00000000      0x8e0 build/adc_driver.o
+ .debug_macro   0x00000000      0x8e6 build/adc_driver.o
  .debug_macro   0x00000000      0x16d build/adc_driver.o
  .debug_macro   0x00000000       0x22 build/adc_driver.o
  .debug_macro   0x00000000       0x56 build/adc_driver.o
@@ -587,7 +587,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 build/adc_driver.o
  .debug_macro   0x00000000       0x8a build/adc_driver.o
  .debug_line    0x00000000      0xb77 build/adc_driver.o
- .debug_str     0x00000000    0x6b010 build/adc_driver.o
+ .debug_str     0x00000000    0x6b01e build/adc_driver.o
  .comment       0x00000000       0x7f build/adc_driver.o
  .debug_frame   0x00000000      0x258 build/adc_driver.o
  .ARM.attributes
@@ -655,7 +655,7 @@ Discarded input sections
                 0x00000000       0x28 build/edma_driver.o
  .rodata.s_edmaIrqId
                 0x00000000       0x10 build/edma_driver.o
- .debug_macro   0x00000000      0x8e0 build/edma_driver.o
+ .debug_macro   0x00000000      0x8e6 build/edma_driver.o
  .debug_macro   0x00000000       0x22 build/edma_driver.o
  .debug_macro   0x00000000       0x56 build/edma_driver.o
  .debug_macro   0x00000000       0x51 build/edma_driver.o
@@ -704,7 +704,7 @@ Discarded input sections
                 0x00000000       0x78 build/edma_hw_access.o
  .text.DMAMUX_Init
                 0x00000000        0xe build/edma_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/edma_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/edma_hw_access.o
  .debug_macro   0x00000000       0x22 build/edma_hw_access.o
  .debug_macro   0x00000000       0x56 build/edma_hw_access.o
  .debug_macro   0x00000000       0x51 build/edma_hw_access.o
@@ -737,7 +737,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/edma_irq.o
  .data          0x00000000        0x0 build/edma_irq.o
  .bss           0x00000000        0x0 build/edma_irq.o
- .debug_macro   0x00000000      0x8e0 build/edma_irq.o
+ .debug_macro   0x00000000      0x8e6 build/edma_irq.o
  .debug_macro   0x00000000       0x22 build/edma_irq.o
  .debug_macro   0x00000000       0x56 build/edma_irq.o
  .debug_macro   0x00000000       0x51 build/edma_irq.o
@@ -829,7 +829,7 @@ Discarded input sections
                 0x00000000       0x1c build/flash_driver.o
  .text.FLASH_DRV_GetDefaultConfig
                 0x00000000       0x24 build/flash_driver.o
- .debug_macro   0x00000000      0x8e0 build/flash_driver.o
+ .debug_macro   0x00000000      0x8e6 build/flash_driver.o
  .debug_macro   0x00000000       0x22 build/flash_driver.o
  .debug_macro   0x00000000      0x16d build/flash_driver.o
  .debug_macro   0x00000000       0x10 build/flash_driver.o
@@ -964,7 +964,7 @@ Discarded input sections
                 0x00000000        0x6 build/flexcan_driver.o
  .rodata.g_flexcanWakeUpIrqId
                 0x00000000        0x3 build/flexcan_driver.o
- .debug_macro   0x00000000      0x8e0 build/flexcan_driver.o
+ .debug_macro   0x00000000      0x8e6 build/flexcan_driver.o
  .debug_macro   0x00000000       0x22 build/flexcan_driver.o
  .debug_macro   0x00000000       0xef build/flexcan_driver.o
  .debug_macro   0x00000000       0x6a build/flexcan_driver.o
@@ -1043,7 +1043,7 @@ Discarded input sections
                 0x00000000      0x1b0 build/flexcan_hw_access.o
  .rodata.payload_code.7358
                 0x00000000       0x41 build/flexcan_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/flexcan_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/flexcan_hw_access.o
  .debug_macro   0x00000000       0x22 build/flexcan_hw_access.o
  .debug_macro   0x00000000       0x4c build/flexcan_hw_access.o
  .debug_macro   0x00000000       0x18 build/flexcan_hw_access.o
@@ -1085,7 +1085,7 @@ Discarded input sections
                 0x00000000        0xa build/flexcan_irq.o
  .text.CAN2_ORed_16_31_MB_IRQHandler
                 0x00000000        0xa build/flexcan_irq.o
- .debug_macro   0x00000000      0x8e0 build/flexcan_irq.o
+ .debug_macro   0x00000000      0x8e6 build/flexcan_irq.o
  .debug_macro   0x00000000       0x10 build/flexcan_irq.o
  .debug_macro   0x00000000       0x79 build/flexcan_irq.o
  .debug_macro   0x00000000       0x19 build/flexcan_irq.o
@@ -1155,7 +1155,7 @@ Discarded input sections
                 0x00000000        0x4 build/ftm_common.o
  .rodata.g_ftmReloadIrqId
                 0x00000000        0x4 build/ftm_common.o
- .debug_macro   0x00000000      0x8e0 build/ftm_common.o
+ .debug_macro   0x00000000      0x8e6 build/ftm_common.o
  .debug_macro   0x00000000      0x16d build/ftm_common.o
  .debug_macro   0x00000000       0x10 build/ftm_common.o
  .debug_macro   0x00000000       0x79 build/ftm_common.o
@@ -1190,7 +1190,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/ftm_hw_access.o
  .data          0x00000000        0x0 build/ftm_hw_access.o
  .bss           0x00000000        0x0 build/ftm_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/ftm_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/ftm_hw_access.o
  .debug_macro   0x00000000       0x22 build/ftm_hw_access.o
  .debug_macro   0x00000000      0x16d build/ftm_hw_access.o
  .debug_macro   0x00000000       0x10 build/ftm_hw_access.o
@@ -1232,7 +1232,7 @@ Discarded input sections
                 0x00000000       0xa4 build/ftm_ic_driver.o
  .text.FTM_IC_DRV_SetChannelMode
                 0x00000000      0x1c4 build/ftm_ic_driver.o
- .debug_macro   0x00000000      0x8e0 build/ftm_ic_driver.o
+ .debug_macro   0x00000000      0x8e6 build/ftm_ic_driver.o
  .debug_macro   0x00000000      0x16d build/ftm_ic_driver.o
  .debug_macro   0x00000000       0x10 build/ftm_ic_driver.o
  .debug_macro   0x00000000       0x79 build/ftm_ic_driver.o
@@ -1276,7 +1276,7 @@ Discarded input sections
                 0x00000000       0x50 build/ftm_pwm_driver.o
  .text.FTM_PWM_DRV_IrqHandler
                 0x00000000       0xb0 build/ftm_pwm_driver.o
- .debug_macro   0x00000000      0x8e0 build/ftm_pwm_driver.o
+ .debug_macro   0x00000000      0x8e6 build/ftm_pwm_driver.o
  .debug_macro   0x00000000      0x16d build/ftm_pwm_driver.o
  .debug_macro   0x00000000       0x10 build/ftm_pwm_driver.o
  .debug_macro   0x00000000       0x79 build/ftm_pwm_driver.o
@@ -1350,7 +1350,7 @@ Discarded input sections
                 0x00000000       0x30 build/lpi2c_driver.o
  .text.LPI2C_DRV_SlaveGetDefaultConfig
                 0x00000000       0x18 build/lpi2c_driver.o
- .debug_macro   0x00000000      0x8e0 build/lpi2c_driver.o
+ .debug_macro   0x00000000      0x8e6 build/lpi2c_driver.o
  .debug_macro   0x00000000      0x16d build/lpi2c_driver.o
  .debug_macro   0x00000000       0x22 build/lpi2c_driver.o
  .debug_macro   0x00000000       0x10 build/lpi2c_driver.o
@@ -1389,7 +1389,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/lpi2c_hw_access.o
  .data          0x00000000        0x0 build/lpi2c_hw_access.o
  .bss           0x00000000        0x0 build/lpi2c_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/lpi2c_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/lpi2c_hw_access.o
  .debug_macro   0x00000000       0x22 build/lpi2c_hw_access.o
  .debug_macro   0x00000000      0x16d build/lpi2c_hw_access.o
  .debug_macro   0x00000000       0x10 build/lpi2c_hw_access.o
@@ -1425,7 +1425,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/lpi2c_irq.o
  .data          0x00000000        0x0 build/lpi2c_irq.o
  .bss           0x00000000        0x0 build/lpi2c_irq.o
- .debug_macro   0x00000000      0x8e0 build/lpi2c_irq.o
+ .debug_macro   0x00000000      0x8e6 build/lpi2c_irq.o
  .debug_macro   0x00000000       0x10 build/lpi2c_irq.o
  .debug_macro   0x00000000       0x79 build/lpi2c_irq.o
  .debug_macro   0x00000000       0x19 build/lpi2c_irq.o
@@ -1485,7 +1485,7 @@ Discarded input sections
                 0x00000000       0x18 build/lptmr_driver.o
  .text.LPTMR_DRV_SetPinConfiguration
                 0x00000000       0x34 build/lptmr_driver.o
- .debug_macro   0x00000000      0x8e0 build/lptmr_driver.o
+ .debug_macro   0x00000000      0x8e6 build/lptmr_driver.o
  .debug_macro   0x00000000       0x22 build/lptmr_driver.o
  .debug_macro   0x00000000       0x56 build/lptmr_driver.o
  .debug_macro   0x00000000       0x51 build/lptmr_driver.o
@@ -1517,7 +1517,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/lptmr_hw_access.o
  .data          0x00000000        0x0 build/lptmr_hw_access.o
  .bss           0x00000000        0x0 build/lptmr_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/lptmr_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/lptmr_hw_access.o
  .debug_macro   0x00000000       0x22 build/lptmr_hw_access.o
  .debug_macro   0x00000000       0x56 build/lptmr_hw_access.o
  .debug_macro   0x00000000       0x51 build/lptmr_hw_access.o
@@ -1577,7 +1577,7 @@ Discarded input sections
                 0x00000000       0x28 build/lpuart_driver.o
  .text.LPUART_DRV_SetRxBuffer
                 0x00000000       0x28 build/lpuart_driver.o
- .debug_macro   0x00000000      0x8e0 build/lpuart_driver.o
+ .debug_macro   0x00000000      0x8e6 build/lpuart_driver.o
  .debug_macro   0x00000000      0x16d build/lpuart_driver.o
  .debug_macro   0x00000000       0x22 build/lpuart_driver.o
  .debug_macro   0x00000000       0x10 build/lpuart_driver.o
@@ -1617,7 +1617,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/lpuart_hw_access.o
  .text.LPUART_ClearStatusFlag
                 0x00000000      0x130 build/lpuart_hw_access.o
- .debug_macro   0x00000000      0x8e0 build/lpuart_hw_access.o
+ .debug_macro   0x00000000      0x8e6 build/lpuart_hw_access.o
  .debug_macro   0x00000000      0x16d build/lpuart_hw_access.o
  .debug_macro   0x00000000       0x10 build/lpuart_hw_access.o
  .debug_macro   0x00000000       0x79 build/lpuart_hw_access.o
@@ -1650,7 +1650,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/lpuart_irq.o
  .data          0x00000000        0x0 build/lpuart_irq.o
  .bss           0x00000000        0x0 build/lpuart_irq.o
- .debug_macro   0x00000000      0x8e0 build/lpuart_irq.o
+ .debug_macro   0x00000000      0x8e6 build/lpuart_irq.o
  .debug_macro   0x00000000       0x10 build/lpuart_irq.o
  .debug_macro   0x00000000       0x79 build/lpuart_irq.o
  .debug_macro   0x00000000       0x19 build/lpuart_irq.o
@@ -1690,7 +1690,7 @@ Discarded input sections
                 0x00000000        0x4 build/osif_baremetal.o
  .text.OSIF_SemaDestroy
                 0x00000000        0xa build/osif_baremetal.o
- .debug_macro   0x00000000      0x8e0 build/osif_baremetal.o
+ .debug_macro   0x00000000      0x8e6 build/osif_baremetal.o
  .debug_macro   0x00000000       0x22 build/osif_baremetal.o
  .debug_macro   0x00000000       0x56 build/osif_baremetal.o
  .debug_macro   0x00000000       0x51 build/osif_baremetal.o
@@ -1726,7 +1726,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/UdsBootMgr.o
  .bss.ADDR_APP  0x00000000        0x4 build/UdsBootMgr.o
  .bss.func      0x00000000        0x4 build/UdsBootMgr.o
- .debug_macro   0x00000000      0x8e0 build/UdsBootMgr.o
+ .debug_macro   0x00000000      0x8e6 build/UdsBootMgr.o
  .debug_macro   0x00000000       0x22 build/UdsBootMgr.o
  .debug_macro   0x00000000       0x56 build/UdsBootMgr.o
  .debug_macro   0x00000000       0x51 build/UdsBootMgr.o
@@ -1780,7 +1780,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/UdsNvmMgr.o
  .bss.clean     0x00000000        0x1 build/UdsNvmMgr.o
  .data.data     0x00000000        0x1 build/UdsNvmMgr.o
- .debug_macro   0x00000000      0x8e0 build/UdsNvmMgr.o
+ .debug_macro   0x00000000      0x8e6 build/UdsNvmMgr.o
  .debug_macro   0x00000000       0x22 build/UdsNvmMgr.o
  .debug_macro   0x00000000       0x56 build/UdsNvmMgr.o
  .debug_macro   0x00000000       0x51 build/UdsNvmMgr.o
@@ -1838,7 +1838,7 @@ Discarded input sections
                 0x00000000       0x28 build/ancit_driver_digital_io.o
  .debug_ranges  0x00000000       0x18 build/ancit_driver_digital_io.o
  .debug_macro   0x00000000      0x271 build/ancit_driver_digital_io.o
- .debug_macro   0x00000000      0x8e0 build/ancit_driver_digital_io.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_driver_digital_io.o
  .debug_macro   0x00000000       0x10 build/ancit_driver_digital_io.o
  .debug_macro   0x00000000       0x79 build/ancit_driver_digital_io.o
  .debug_macro   0x00000000       0x19 build/ancit_driver_digital_io.o
@@ -1864,7 +1864,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 build/ancit_driver_digital_io.o
  .debug_macro   0x00000000       0x46 build/ancit_driver_digital_io.o
  .debug_line    0x00000000      0x77e build/ancit_driver_digital_io.o
- .debug_str     0x00000000    0x707c5 build/ancit_driver_digital_io.o
+ .debug_str     0x00000000    0x707d3 build/ancit_driver_digital_io.o
  .comment       0x00000000       0x7f build/ancit_driver_digital_io.o
  .debug_frame   0x00000000       0x44 build/ancit_driver_digital_io.o
  .ARM.attributes
@@ -1897,7 +1897,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/ancit_driver_timer.o
  .data          0x00000000        0x0 build/ancit_driver_timer.o
  .bss           0x00000000        0x0 build/ancit_driver_timer.o
- .debug_macro   0x00000000      0x8e0 build/ancit_driver_timer.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_driver_timer.o
  .debug_macro   0x00000000       0x10 build/ancit_driver_timer.o
  .debug_macro   0x00000000       0x79 build/ancit_driver_timer.o
  .debug_macro   0x00000000       0x19 build/ancit_driver_timer.o
@@ -1950,7 +1950,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/ancit_driver_uart.o
  .text.ancit_driver_uart_SetRxBuffer
                 0x00000000        0x8 build/ancit_driver_uart.o
- .debug_macro   0x00000000      0x8e0 build/ancit_driver_uart.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_driver_uart.o
  .debug_macro   0x00000000       0x10 build/ancit_driver_uart.o
  .debug_macro   0x00000000       0x79 build/ancit_driver_uart.o
  .debug_macro   0x00000000       0x19 build/ancit_driver_uart.o
@@ -2026,7 +2026,7 @@ Discarded input sections
  .bss.LPUARTStatus_rx
                 0x00000000        0x2 build/fota_uart.o
  .bss.rx_state  0x00000000        0x1 build/fota_uart.o
- .debug_macro   0x00000000      0x8e0 build/fota_uart.o
+ .debug_macro   0x00000000      0x8e6 build/fota_uart.o
  .debug_macro   0x00000000       0x22 build/fota_uart.o
  .debug_macro   0x00000000       0x4c build/fota_uart.o
  .debug_macro   0x00000000       0x18 build/fota_uart.o
@@ -2073,9 +2073,9 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/fota_uart_config.o
  .debug_macro   0x00000000       0x11 build/fota_uart_config.o
- .debug_macro   0x00000000      0x8e0 build/fota_uart_config.o
+ .debug_macro   0x00000000      0x8e6 build/fota_uart_config.o
  .debug_line    0x00000000       0x3e build/fota_uart_config.o
- .debug_str     0x00000000     0x2703 build/fota_uart_config.o
+ .debug_str     0x00000000     0x2711 build/fota_uart_config.o
  .comment       0x00000000       0x7f build/fota_uart_config.o
  .ARM.attributes
                 0x00000000       0x39 build/fota_uart_config.o
@@ -2112,7 +2112,7 @@ Discarded input sections
  .text.Jump_to_App
                 0x00000000       0x20 build/fota_utils.o
  .bss.app       0x00000000        0x4 build/fota_utils.o
- .debug_macro   0x00000000      0x8e0 build/fota_utils.o
+ .debug_macro   0x00000000      0x8e6 build/fota_utils.o
  .debug_macro   0x00000000       0x22 build/fota_utils.o
  .debug_macro   0x00000000       0x4c build/fota_utils.o
  .debug_macro   0x00000000       0x18 build/fota_utils.o
@@ -2173,7 +2173,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/ancit_di.o
  .debug_macro   0x00000000      0x294 build/ancit_di.o
- .debug_macro   0x00000000      0x8e0 build/ancit_di.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_di.o
  .debug_macro   0x00000000       0x10 build/ancit_di.o
  .debug_macro   0x00000000       0x79 build/ancit_di.o
  .debug_macro   0x00000000       0x19 build/ancit_di.o
@@ -2200,7 +2200,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x3a build/ancit_di.o
  .debug_macro   0x00000000       0x46 build/ancit_di.o
  .debug_line    0x00000000      0x7a5 build/ancit_di.o
- .debug_str     0x00000000    0x7084f build/ancit_di.o
+ .debug_str     0x00000000    0x7085d build/ancit_di.o
  .comment       0x00000000       0x7f build/ancit_di.o
  .ARM.attributes
                 0x00000000       0x39 build/ancit_di.o
@@ -2235,7 +2235,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/ancit_pwm.o
  .text.ancit_PWM_DisableChannel
                 0x00000000        0xa build/ancit_pwm.o
- .debug_macro   0x00000000      0x8e0 build/ancit_pwm.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_pwm.o
  .debug_macro   0x00000000       0x10 build/ancit_pwm.o
  .debug_macro   0x00000000       0x79 build/ancit_pwm.o
  .debug_macro   0x00000000       0x19 build/ancit_pwm.o
@@ -2298,7 +2298,7 @@ Discarded input sections
                 0x00000000        0xa build/ancit_common.o
  .text.byteSwap32
                 0x00000000       0x18 build/ancit_common.o
- .debug_macro   0x00000000      0x8e0 build/ancit_common.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_common.o
  .debug_macro   0x00000000       0x22 build/ancit_common.o
  .debug_macro   0x00000000       0x56 build/ancit_common.o
  .debug_macro   0x00000000       0x51 build/ancit_common.o
@@ -2340,7 +2340,7 @@ Discarded input sections
                 0x00000000       0x1c build/ancit_scheduler.o
  .text.ancit_scheduler_disable_task
                 0x00000000       0x1c build/ancit_scheduler.o
- .debug_macro   0x00000000      0x8e0 build/ancit_scheduler.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_scheduler.o
  .debug_macro   0x00000000       0x10 build/ancit_scheduler.o
  .debug_macro   0x00000000       0x79 build/ancit_scheduler.o
  .debug_macro   0x00000000       0x19 build/ancit_scheduler.o
@@ -2399,7 +2399,7 @@ Discarded input sections
                 0x00000000       0x10 build/ancit_timer.o
  .text.is_timeout_expired
                 0x00000000       0x1c build/ancit_timer.o
- .debug_macro   0x00000000      0x8e0 build/ancit_timer.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_timer.o
  .debug_macro   0x00000000       0x10 build/ancit_timer.o
  .debug_macro   0x00000000       0x79 build/ancit_timer.o
  .debug_macro   0x00000000       0x19 build/ancit_timer.o
@@ -2480,7 +2480,7 @@ Discarded input sections
                 0x00000000        0x8 build/ancit_uart_rte.o
  .text.ancit_uart_conn_IsQueueEmpty
                 0x00000000       0x14 build/ancit_uart_rte.o
- .debug_macro   0x00000000      0x8e0 build/ancit_uart_rte.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_uart_rte.o
  .debug_macro   0x00000000       0x10 build/ancit_uart_rte.o
  .debug_macro   0x00000000       0x79 build/ancit_uart_rte.o
  .debug_macro   0x00000000       0x19 build/ancit_uart_rte.o
@@ -2570,7 +2570,7 @@ Discarded input sections
                 0x00000000        0xc build/ancit_ultrasonic.o
  .text.ancit_ultrasonic_set_temperature
                 0x00000000        0xc build/ancit_ultrasonic.o
- .debug_macro   0x00000000      0x8e0 build/ancit_ultrasonic.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_ultrasonic.o
  .debug_macro   0x00000000       0x10 build/ancit_ultrasonic.o
  .debug_macro   0x00000000       0x79 build/ancit_ultrasonic.o
  .debug_macro   0x00000000       0x19 build/ancit_ultrasonic.o
@@ -2650,7 +2650,7 @@ Discarded input sections
                 0x00000000       0x1c build/ancit_i2c_manager.o
  .text.ancit_i2c_is_request_pending
                 0x00000000       0x1c build/ancit_i2c_manager.o
- .debug_macro   0x00000000      0x8e0 build/ancit_i2c_manager.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_i2c_manager.o
  .debug_macro   0x00000000       0x22 build/ancit_i2c_manager.o
  .debug_macro   0x00000000       0x56 build/ancit_i2c_manager.o
  .debug_macro   0x00000000       0x51 build/ancit_i2c_manager.o
@@ -2768,7 +2768,7 @@ Discarded input sections
                 0x00000000       0x8c build/ancit_oled_driver.o
  .rodata.sin_table.10222
                 0x00000000       0xb6 build/ancit_oled_driver.o
- .debug_macro   0x00000000      0x8e0 build/ancit_oled_driver.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_oled_driver.o
  .debug_macro   0x00000000       0x22 build/ancit_oled_driver.o
  .debug_macro   0x00000000       0x56 build/ancit_oled_driver.o
  .debug_macro   0x00000000       0x51 build/ancit_oled_driver.o
@@ -2861,7 +2861,7 @@ Discarded input sections
                 0x00000000       0x20 build/ancit_oled_handler.o
  .text.ancit_oled_handler_is_busy
                 0x00000000        0x8 build/ancit_oled_handler.o
- .debug_macro   0x00000000      0x8e0 build/ancit_oled_handler.o
+ .debug_macro   0x00000000      0x8e6 build/ancit_oled_handler.o
  .debug_macro   0x00000000       0x22 build/ancit_oled_handler.o
  .debug_macro   0x00000000       0x56 build/ancit_oled_handler.o
  .debug_macro   0x00000000       0x51 build/ancit_oled_handler.o
@@ -2940,7 +2940,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/ssd1306_fonts.o
  .data          0x00000000        0x0 build/ssd1306_fonts.o
  .bss           0x00000000        0x0 build/ssd1306_fonts.o
- .debug_macro   0x00000000      0x8e0 build/ssd1306_fonts.o
+ .debug_macro   0x00000000      0x8e6 build/ssd1306_fonts.o
  .debug_macro   0x00000000       0x40 build/ssd1306_fonts.o
  .debug_macro   0x00000000      0x16d build/ssd1306_fonts.o
  .debug_macro   0x00000000       0x22 build/ssd1306_fonts.o
@@ -2989,7 +2989,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/clock_config.o
  .data          0x00000000        0x0 build/clock_config.o
  .bss           0x00000000        0x0 build/clock_config.o
- .debug_macro   0x00000000      0x8e0 build/clock_config.o
+ .debug_macro   0x00000000      0x8e6 build/clock_config.o
  .debug_macro   0x00000000       0x10 build/clock_config.o
  .debug_macro   0x00000000       0x79 build/clock_config.o
  .debug_macro   0x00000000       0x19 build/clock_config.o
@@ -3029,7 +3029,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/peripherals_MyADC_0.o
  .debug_macro   0x00000000       0xba build/peripherals_MyADC_0.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_MyADC_0.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_MyADC_0.o
  .debug_macro   0x00000000       0x22 build/peripherals_MyADC_0.o
  .debug_macro   0x00000000       0x56 build/peripherals_MyADC_0.o
  .debug_macro   0x00000000       0x51 build/peripherals_MyADC_0.o
@@ -3043,7 +3043,7 @@ Discarded input sections
  .debug_macro   0x00000000      0xbbd build/peripherals_MyADC_0.o
  .debug_macro   0x00000000       0x10 build/peripherals_MyADC_0.o
  .debug_line    0x00000000      0x3b7 build/peripherals_MyADC_0.o
- .debug_str     0x00000000    0x68af3 build/peripherals_MyADC_0.o
+ .debug_str     0x00000000    0x68b01 build/peripherals_MyADC_0.o
  .comment       0x00000000       0x7f build/peripherals_MyADC_0.o
  .ARM.attributes
                 0x00000000       0x39 build/peripherals_MyADC_0.o
@@ -3072,7 +3072,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/peripherals_MyADC_1.o
  .debug_macro   0x00000000       0xba build/peripherals_MyADC_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_MyADC_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_MyADC_1.o
  .debug_macro   0x00000000       0x22 build/peripherals_MyADC_1.o
  .debug_macro   0x00000000       0x56 build/peripherals_MyADC_1.o
  .debug_macro   0x00000000       0x51 build/peripherals_MyADC_1.o
@@ -3086,7 +3086,7 @@ Discarded input sections
  .debug_macro   0x00000000      0xbbd build/peripherals_MyADC_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_MyADC_1.o
  .debug_line    0x00000000      0x3b7 build/peripherals_MyADC_1.o
- .debug_str     0x00000000    0x68af3 build/peripherals_MyADC_1.o
+ .debug_str     0x00000000    0x68b01 build/peripherals_MyADC_1.o
  .comment       0x00000000       0x7f build/peripherals_MyADC_1.o
  .ARM.attributes
                 0x00000000       0x39 build/peripherals_MyADC_1.o
@@ -3126,7 +3126,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/peripherals_edma_config_1.o
  .debug_macro   0x00000000       0xde build/peripherals_edma_config_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_edma_config_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_edma_config_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_edma_config_1.o
  .debug_macro   0x00000000       0x79 build/peripherals_edma_config_1.o
  .debug_macro   0x00000000       0x19 build/peripherals_edma_config_1.o
@@ -3143,7 +3143,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 build/peripherals_edma_config_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_edma_config_1.o
  .debug_line    0x00000000      0x3dc build/peripherals_edma_config_1.o
- .debug_str     0x00000000    0x69344 build/peripherals_edma_config_1.o
+ .debug_str     0x00000000    0x69352 build/peripherals_edma_config_1.o
  .comment       0x00000000       0x7f build/peripherals_edma_config_1.o
  .ARM.attributes
                 0x00000000       0x39 build/peripherals_edma_config_1.o
@@ -3166,7 +3166,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_flash_1.o
  .data          0x00000000        0x0 build/peripherals_flash_1.o
  .bss           0x00000000        0x0 build/peripherals_flash_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_flash_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_flash_1.o
  .debug_macro   0x00000000       0x22 build/peripherals_flash_1.o
  .debug_macro   0x00000000      0x16d build/peripherals_flash_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_flash_1.o
@@ -3200,7 +3200,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_flexTimer_ic_echo.o
  .data          0x00000000        0x0 build/peripherals_flexTimer_ic_echo.o
  .bss           0x00000000        0x0 build/peripherals_flexTimer_ic_echo.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_flexTimer_ic_echo.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_flexTimer_ic_echo.o
  .debug_macro   0x00000000      0x16d build/peripherals_flexTimer_ic_echo.o
  .debug_macro   0x00000000       0x10 build/peripherals_flexTimer_ic_echo.o
  .debug_macro   0x00000000       0x79 build/peripherals_flexTimer_ic_echo.o
@@ -3234,7 +3234,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_flexTimer_pwm_0.o
  .data          0x00000000        0x0 build/peripherals_flexTimer_pwm_0.o
  .bss           0x00000000        0x0 build/peripherals_flexTimer_pwm_0.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_flexTimer_pwm_0.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_flexTimer_pwm_0.o
  .debug_macro   0x00000000      0x16d build/peripherals_flexTimer_pwm_0.o
  .debug_macro   0x00000000       0x10 build/peripherals_flexTimer_pwm_0.o
  .debug_macro   0x00000000       0x79 build/peripherals_flexTimer_pwm_0.o
@@ -3278,7 +3278,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/peripherals_flexcan_config_0.o
  .debug_macro   0x00000000       0xf2 build/peripherals_flexcan_config_0.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_flexcan_config_0.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_flexcan_config_0.o
  .debug_macro   0x00000000       0x10 build/peripherals_flexcan_config_0.o
  .debug_macro   0x00000000       0x79 build/peripherals_flexcan_config_0.o
  .debug_macro   0x00000000       0x19 build/peripherals_flexcan_config_0.o
@@ -3295,7 +3295,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x16d build/peripherals_flexcan_config_0.o
  .debug_macro   0x00000000       0x16 build/peripherals_flexcan_config_0.o
  .debug_line    0x00000000      0x410 build/peripherals_flexcan_config_0.o
- .debug_str     0x00000000    0x692ae build/peripherals_flexcan_config_0.o
+ .debug_str     0x00000000    0x692bc build/peripherals_flexcan_config_0.o
  .comment       0x00000000       0x7f build/peripherals_flexcan_config_0.o
  .ARM.attributes
                 0x00000000       0x39 build/peripherals_flexcan_config_0.o
@@ -3319,7 +3319,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_lpi2c_config_1.o
  .data          0x00000000        0x0 build/peripherals_lpi2c_config_1.o
  .bss           0x00000000        0x0 build/peripherals_lpi2c_config_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_lpi2c_config_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_lpi2c_config_1.o
  .debug_macro   0x00000000      0x16d build/peripherals_lpi2c_config_1.o
  .debug_macro   0x00000000       0x22 build/peripherals_lpi2c_config_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_lpi2c_config_1.o
@@ -3352,7 +3352,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_lptmr_1.o
  .data          0x00000000        0x0 build/peripherals_lptmr_1.o
  .bss           0x00000000        0x0 build/peripherals_lptmr_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_lptmr_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_lptmr_1.o
  .debug_macro   0x00000000       0x22 build/peripherals_lptmr_1.o
  .debug_macro   0x00000000       0x56 build/peripherals_lptmr_1.o
  .debug_macro   0x00000000       0x51 build/peripherals_lptmr_1.o
@@ -3384,7 +3384,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/peripherals_lpuart_1.o
  .data          0x00000000        0x0 build/peripherals_lpuart_1.o
  .bss           0x00000000        0x0 build/peripherals_lpuart_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_lpuart_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_lpuart_1.o
  .debug_macro   0x00000000      0x16d build/peripherals_lpuart_1.o
  .debug_macro   0x00000000       0x10 build/peripherals_lpuart_1.o
  .debug_macro   0x00000000       0x79 build/peripherals_lpuart_1.o
@@ -3415,7 +3415,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 build/peripherals_osif_1.o
  .debug_macro   0x00000000       0x87 build/peripherals_osif_1.o
- .debug_macro   0x00000000      0x8e0 build/peripherals_osif_1.o
+ .debug_macro   0x00000000      0x8e6 build/peripherals_osif_1.o
  .debug_macro   0x00000000       0x22 build/peripherals_osif_1.o
  .debug_macro   0x00000000       0x56 build/peripherals_osif_1.o
  .debug_macro   0x00000000       0x51 build/peripherals_osif_1.o
@@ -3423,7 +3423,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a build/peripherals_osif_1.o
  .debug_macro   0x00000000      0x1df build/peripherals_osif_1.o
  .debug_line    0x00000000      0x29e build/peripherals_osif_1.o
- .debug_str     0x00000000     0x35ae build/peripherals_osif_1.o
+ .debug_str     0x00000000     0x35bc build/peripherals_osif_1.o
  .comment       0x00000000       0x7f build/peripherals_osif_1.o
  .ARM.attributes
                 0x00000000       0x39 build/peripherals_osif_1.o
@@ -3445,7 +3445,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/pin_mux.o
  .data          0x00000000        0x0 build/pin_mux.o
  .bss           0x00000000        0x0 build/pin_mux.o
- .debug_macro   0x00000000      0x8e0 build/pin_mux.o
+ .debug_macro   0x00000000      0x8e6 build/pin_mux.o
  .debug_macro   0x00000000      0x16d build/pin_mux.o
  .debug_macro   0x00000000       0x10 build/pin_mux.o
  .debug_macro   0x00000000       0x79 build/pin_mux.o
@@ -3502,7 +3502,7 @@ Discarded input sections
  .text.ACC_terminate
                 0x00000000        0x2 build/ACC.o
  .rodata.ACC_M  0x00000000        0x4 build/ACC.o
- .debug_macro   0x00000000      0x8e0 build/ACC.o
+ .debug_macro   0x00000000      0x8e6 build/ACC.o
  .debug_macro   0x00000000       0x22 build/ACC.o
  .debug_macro   0x00000000       0x4c build/ACC.o
  .debug_macro   0x00000000       0x5c build/ACC.o
@@ -3558,7 +3558,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/ACC_data.o
  .data          0x00000000        0x0 build/ACC_data.o
  .bss           0x00000000        0x0 build/ACC_data.o
- .debug_macro   0x00000000      0x8e0 build/ACC_data.o
+ .debug_macro   0x00000000      0x8e6 build/ACC_data.o
  .debug_macro   0x00000000       0x10 build/ACC_data.o
  .debug_macro   0x00000000       0x10 build/ACC_data.o
  .debug_macro   0x00000000       0x22 build/ACC_data.o
@@ -3622,7 +3622,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/SK_DC.o
  .data          0x00000000        0x0 build/SK_DC.o
  .bss           0x00000000        0x0 build/SK_DC.o
- .debug_macro   0x00000000      0x8e0 build/SK_DC.o
+ .debug_macro   0x00000000      0x8e6 build/SK_DC.o
  .debug_macro   0x00000000       0x10 build/SK_DC.o
  .debug_macro   0x00000000       0x79 build/SK_DC.o
  .debug_macro   0x00000000       0x19 build/SK_DC.o
@@ -3688,7 +3688,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/genx_common.o
  .data          0x00000000        0x0 build/genx_common.o
  .bss           0x00000000        0x0 build/genx_common.o
- .debug_macro   0x00000000      0x8e0 build/genx_common.o
+ .debug_macro   0x00000000      0x8e6 build/genx_common.o
  .debug_macro   0x00000000       0x10 build/genx_common.o
  .debug_macro   0x00000000       0x79 build/genx_common.o
  .debug_macro   0x00000000       0x19 build/genx_common.o
@@ -3761,7 +3761,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/genx_i2c_manager.o
  .data          0x00000000        0x0 build/genx_i2c_manager.o
  .bss           0x00000000        0x0 build/genx_i2c_manager.o
- .debug_macro   0x00000000      0x8e0 build/genx_i2c_manager.o
+ .debug_macro   0x00000000      0x8e6 build/genx_i2c_manager.o
  .debug_macro   0x00000000       0x10 build/genx_i2c_manager.o
  .debug_macro   0x00000000       0x79 build/genx_i2c_manager.o
  .debug_macro   0x00000000       0x19 build/genx_i2c_manager.o
@@ -3841,7 +3841,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/genx_oled.o
  .data          0x00000000        0x0 build/genx_oled.o
  .bss           0x00000000        0x0 build/genx_oled.o
- .debug_macro   0x00000000      0x8e0 build/genx_oled.o
+ .debug_macro   0x00000000      0x8e6 build/genx_oled.o
  .debug_macro   0x00000000       0x10 build/genx_oled.o
  .debug_macro   0x00000000       0x79 build/genx_oled.o
  .debug_macro   0x00000000       0x19 build/genx_oled.o
@@ -3923,7 +3923,7 @@ Discarded input sections
                 0x00000000        0xc build/genx_pwm.o
  .text.genx_PWM_RBM_DisableOutput
                 0x00000000        0xc build/genx_pwm.o
- .debug_macro   0x00000000      0x8e0 build/genx_pwm.o
+ .debug_macro   0x00000000      0x8e6 build/genx_pwm.o
  .debug_macro   0x00000000       0x10 build/genx_pwm.o
  .debug_macro   0x00000000       0x79 build/genx_pwm.o
  .debug_macro   0x00000000       0x19 build/genx_pwm.o
@@ -4017,7 +4017,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/genx_scheduler.o
  .data          0x00000000        0x0 build/genx_scheduler.o
  .bss           0x00000000        0x0 build/genx_scheduler.o
- .debug_macro   0x00000000      0x8e0 build/genx_scheduler.o
+ .debug_macro   0x00000000      0x8e6 build/genx_scheduler.o
  .debug_macro   0x00000000       0x22 build/genx_scheduler.o
  .debug_macro   0x00000000       0x56 build/genx_scheduler.o
  .debug_macro   0x00000000       0x51 build/genx_scheduler.o
@@ -4120,7 +4120,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/genx_simulink_bridge.o
  .data          0x00000000        0x0 build/genx_simulink_bridge.o
  .bss           0x00000000        0x0 build/genx_simulink_bridge.o
- .debug_macro   0x00000000      0x8e0 build/genx_simulink_bridge.o
+ .debug_macro   0x00000000      0x8e6 build/genx_simulink_bridge.o
  .debug_macro   0x00000000       0x10 build/genx_simulink_bridge.o
  .debug_macro   0x00000000       0x10 build/genx_simulink_bridge.o
  .debug_macro   0x00000000       0x22 build/genx_simulink_bridge.o
@@ -4206,7 +4206,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/genx_uart_rte.o
  .text.ancit_uart_command_receive
                 0x00000000        0x2 build/genx_uart_rte.o
- .debug_macro   0x00000000      0x8e0 build/genx_uart_rte.o
+ .debug_macro   0x00000000      0x8e6 build/genx_uart_rte.o
  .debug_macro   0x00000000       0x22 build/genx_uart_rte.o
  .debug_macro   0x00000000       0x56 build/genx_uart_rte.o
  .debug_macro   0x00000000       0x51 build/genx_uart_rte.o
@@ -4323,7 +4323,7 @@ Discarded input sections
  .bss           0x00000000        0x0 build/main.o
  .bss.exit_code
                 0x00000000        0x4 build/main.o
- .debug_macro   0x00000000      0x8e0 build/main.o
+ .debug_macro   0x00000000      0x8e6 build/main.o
  .debug_macro   0x00000000       0x10 build/main.o
  .debug_macro   0x00000000       0x79 build/main.o
  .debug_macro   0x00000000       0x19 build/main.o
@@ -4463,7 +4463,7 @@ Discarded input sections
                 0x00000000       0xcc build/rt_logging.o
  .rodata.rt_StopDataLoggingImpl.str1.4
                 0x00000000       0xcb build/rt_logging.o
- .debug_macro   0x00000000      0x8e0 build/rt_logging.o
+ .debug_macro   0x00000000      0x8e6 build/rt_logging.o
  .debug_macro   0x00000000       0x18 build/rt_logging.o
  .debug_macro   0x00000000       0x22 build/rt_logging.o
  .debug_macro   0x00000000       0x4c build/rt_logging.o
@@ -4540,7 +4540,7 @@ Discarded input sections
                 0x00000000        0x8 build/rt_nonfinite.o
  .data.rtMinusInfF
                 0x00000000        0x4 build/rt_nonfinite.o
- .debug_macro   0x00000000      0x8e0 build/rt_nonfinite.o
+ .debug_macro   0x00000000      0x8e6 build/rt_nonfinite.o
  .debug_macro   0x00000000       0x10 build/rt_nonfinite.o
  .debug_macro   0x00000000       0x22 build/rt_nonfinite.o
  .debug_macro   0x00000000       0x4c build/rt_nonfinite.o
@@ -7882,164 +7882,164 @@ OUTPUT(build/SM_Rover_V1.elf elf32-littlearm)
  .debug_ranges  0x000029d0      0x880 build/rt_logging.o
  .debug_ranges  0x00003250       0x28 build/rt_nonfinite.o
 
-.debug_macro    0x00000000    0x28e3b
+.debug_macro    0x00000000    0x28e41
  .debug_macro   0x00000000       0xb6 build/system_S32K144.o
- .debug_macro   0x000000b6      0x8e0 build/system_S32K144.o
- .debug_macro   0x00000996       0x10 build/system_S32K144.o
- .debug_macro   0x000009a6       0x79 build/system_S32K144.o
- .debug_macro   0x00000a1f       0x19 build/system_S32K144.o
- .debug_macro   0x00000a38       0x22 build/system_S32K144.o
- .debug_macro   0x00000a5a       0x56 build/system_S32K144.o
- .debug_macro   0x00000ab0       0x51 build/system_S32K144.o
- .debug_macro   0x00000b01       0xef build/system_S32K144.o
- .debug_macro   0x00000bf0       0x6a build/system_S32K144.o
- .debug_macro   0x00000c5a      0x1df build/system_S32K144.o
- .debug_macro   0x00000e39     0xed1d build/system_S32K144.o
- .debug_macro   0x0000fb56      0xbbd build/system_S32K144.o
- .debug_macro   0x00010713       0x22 build/system_S32K144.o
- .debug_macro   0x00010735       0x28 build/system_S32K144.o
- .debug_macro   0x0001075d       0xb6 build/startup.o
- .debug_macro   0x00010813     0xed32 build/startup.o
- .debug_macro   0x0001f545       0x40 build/startup.o
- .debug_macro   0x0001f585      0x2b0 build/clock_S32K1xx.o
- .debug_macro   0x0001f835      0x16d build/clock_S32K1xx.o
- .debug_macro   0x0001f9a2       0x16 build/clock_S32K1xx.o
- .debug_macro   0x0001f9b8       0x8a build/clock_S32K1xx.o
- .debug_macro   0x0001fa42       0xca build/interrupt_manager.o
- .debug_macro   0x0001fb0c       0xde build/pins_driver.o
- .debug_macro   0x0001fbea       0xde build/pins_port_hw_access.o
- .debug_macro   0x0001fcc8       0xf7 build/edma_driver.o
- .debug_macro   0x0001fdbf       0x16 build/edma_driver.o
- .debug_macro   0x0001fdd5       0xcc build/edma_hw_access.o
- .debug_macro   0x0001fea1       0xd0 build/edma_irq.o
- .debug_macro   0x0001ff71       0xd2 build/flash_driver.o
- .debug_macro   0x00020043      0x575 build/flash_driver.o
- .debug_macro   0x000205b8      0x19a build/flexcan_driver.o
- .debug_macro   0x00020752       0x4c build/flexcan_driver.o
- .debug_macro   0x0002079e       0x18 build/flexcan_driver.o
- .debug_macro   0x000207b6       0x5c build/flexcan_driver.o
- .debug_macro   0x00020812       0x35 build/flexcan_driver.o
- .debug_macro   0x00020847       0x34 build/flexcan_driver.o
- .debug_macro   0x0002087b       0x16 build/flexcan_driver.o
- .debug_macro   0x00020891       0x57 build/flexcan_driver.o
- .debug_macro   0x000208e8       0x10 build/flexcan_driver.o
- .debug_macro   0x000208f8      0x184 build/flexcan_driver.o
- .debug_macro   0x00020a7c      0x170 build/flexcan_hw_access.o
- .debug_macro   0x00020bec       0xb7 build/flexcan_irq.o
- .debug_macro   0x00020ca3      0x10e build/ftm_common.o
- .debug_macro   0x00020db1       0xbe build/ftm_common.o
- .debug_macro   0x00020e6f      0x107 build/ftm_hw_access.o
- .debug_macro   0x00020f76      0x11c build/ftm_ic_driver.o
- .debug_macro   0x00021092      0x121 build/ftm_pwm_driver.o
- .debug_macro   0x000211b3       0x10 build/ftm_pwm_driver.o
- .debug_macro   0x000211c3      0x143 build/lpi2c_driver.o
- .debug_macro   0x00021306       0x88 build/lpi2c_driver.o
- .debug_macro   0x0002138e       0xfe build/lpi2c_hw_access.o
- .debug_macro   0x0002148c       0x82 build/lpi2c_hw_access.o
- .debug_macro   0x0002150e      0x100 build/lpi2c_irq.o
- .debug_macro   0x0002160e       0xf0 build/lptmr_driver.o
- .debug_macro   0x000216fe       0xc7 build/lptmr_hw_access.o
- .debug_macro   0x000217c5      0x12d build/lpuart_driver.o
- .debug_macro   0x000218f2       0x34 build/lpuart_driver.o
- .debug_macro   0x00021926      0x109 build/lpuart_hw_access.o
- .debug_macro   0x00021a2f       0xc1 build/lpuart_irq.o
- .debug_macro   0x00021af0       0xfb build/osif_baremetal.o
- .debug_macro   0x00021beb       0xe4 build/UdsBootMgr.o
- .debug_macro   0x00021ccf       0x10 build/UdsBootMgr.o
- .debug_macro   0x00021cdf      0x1d4 build/UdsNvmMgr.o
- .debug_macro   0x00021eb3       0x52 build/UdsNvmMgr.o
- .debug_macro   0x00021f05       0x16 build/UdsNvmMgr.o
- .debug_macro   0x00021f1b       0x35 build/UdsNvmMgr.o
- .debug_macro   0x00021f50      0x35c build/UdsNvmMgr.o
- .debug_macro   0x000222ac       0x10 build/UdsNvmMgr.o
- .debug_macro   0x000222bc       0x52 build/UdsNvmMgr.o
- .debug_macro   0x0002230e       0x1f build/UdsNvmMgr.o
- .debug_macro   0x0002232d       0x43 build/UdsNvmMgr.o
- .debug_macro   0x00022370       0x20 build/UdsNvmMgr.o
- .debug_macro   0x00022390      0x18e build/UdsNvmMgr.o
- .debug_macro   0x0002251e       0x10 build/UdsNvmMgr.o
- .debug_macro   0x0002252e       0xb6 build/UdsNvmMgr.o
- .debug_macro   0x000225e4       0x16 build/UdsNvmMgr.o
- .debug_macro   0x000225fa      0x129 build/UdsNvmMgr.o
- .debug_macro   0x00022723      0x271 build/ancit_driver_timer.o
- .debug_macro   0x00022994       0x40 build/ancit_driver_timer.o
- .debug_macro   0x000229d4      0x254 build/ancit_driver_uart.o
- .debug_macro   0x00022c28      0x385 build/fota_uart.o
- .debug_macro   0x00022fad       0x97 build/fota_uart.o
- .debug_macro   0x00023044       0xf6 build/fota_uart.o
- .debug_macro   0x0002313a       0x22 build/fota_uart.o
- .debug_macro   0x0002315c       0x16 build/fota_uart.o
- .debug_macro   0x00023172      0x177 build/fota_utils.o
- .debug_macro   0x000232e9      0x270 build/ancit_pwm.o
- .debug_macro   0x00023559       0x40 build/ancit_pwm.o
- .debug_macro   0x00023599       0x7b build/ancit_common.o
- .debug_macro   0x00023614      0x280 build/ancit_scheduler.o
- .debug_macro   0x00023894      0x284 build/ancit_timer.o
- .debug_macro   0x00023b18       0x40 build/ancit_timer.o
- .debug_macro   0x00023b58      0x40c build/ancit_uart_rte.o
- .debug_macro   0x00023f64       0x3a build/ancit_uart_rte.o
- .debug_macro   0x00023f9e       0x10 build/ancit_uart_rte.o
- .debug_macro   0x00023fae       0x16 build/ancit_uart_rte.o
- .debug_macro   0x00023fc4       0x16 build/ancit_uart_rte.o
- .debug_macro   0x00023fda       0x22 build/ancit_uart_rte.o
- .debug_macro   0x00023ffc      0x318 build/ancit_ultrasonic.o
- .debug_macro   0x00024314       0x3a build/ancit_ultrasonic.o
- .debug_macro   0x0002434e       0xde build/ancit_ultrasonic.o
- .debug_macro   0x0002442c      0x311 build/ancit_i2c_manager.o
- .debug_macro   0x0002473d       0x52 build/ancit_i2c_manager.o
- .debug_macro   0x0002478f       0x10 build/ancit_i2c_manager.o
- .debug_macro   0x0002479f      0x36d build/ancit_oled_driver.o
- .debug_macro   0x00024b0c       0x40 build/ancit_oled_driver.o
- .debug_macro   0x00024b4c       0x28 build/ancit_oled_driver.o
- .debug_macro   0x00024b74      0x3a0 build/ancit_oled_handler.o
- .debug_macro   0x00024f14      0x2aa build/ssd1306_fonts.o
- .debug_macro   0x000251be       0xd9 build/clock_config.o
- .debug_macro   0x00025297       0xd2 build/peripherals_flash_1.o
- .debug_macro   0x00025369       0xf3 build/peripherals_flexTimer_ic_echo.o
- .debug_macro   0x0002545c       0xf8 build/peripherals_flexTimer_pwm_0.o
- .debug_macro   0x00025554       0xff build/peripherals_lpi2c_config_1.o
- .debug_macro   0x00025653       0xc4 build/peripherals_lptmr_1.o
- .debug_macro   0x00025717      0x10a build/peripherals_lpuart_1.o
- .debug_macro   0x00025821       0xd9 build/pin_mux.o
- .debug_macro   0x000258fa      0x210 build/ACC.o
- .debug_macro   0x00025b0a       0x10 build/ACC.o
- .debug_macro   0x00025b1a       0x10 build/ACC.o
- .debug_macro   0x00025b2a       0x7c build/ACC.o
- .debug_macro   0x00025ba6       0x17 build/ACC.o
- .debug_macro   0x00025bbd       0xee build/ACC.o
- .debug_macro   0x00025cab       0x10 build/ACC.o
- .debug_macro   0x00025cbb      0x183 build/ACC.o
- .debug_macro   0x00025e3e      0x185 build/ACC.o
- .debug_macro   0x00025fc3       0x4a build/ACC.o
- .debug_macro   0x0002600d       0x88 build/ACC.o
- .debug_macro   0x00026095      0x2f8 build/ACC.o
- .debug_macro   0x0002638d       0x16 build/ACC.o
- .debug_macro   0x000263a3       0x28 build/ACC.o
- .debug_macro   0x000263cb       0xeb build/ACC.o
- .debug_macro   0x000264b6       0x5e build/ACC.o
- .debug_macro   0x00026514       0xc9 build/ACC.o
- .debug_macro   0x000265dd       0x40 build/ACC.o
- .debug_macro   0x0002661d       0x10 build/ACC.o
- .debug_macro   0x0002662d      0x201 build/ACC_data.o
- .debug_macro   0x0002682e      0x29e build/SK_DC.o
- .debug_macro   0x00026acc      0x315 build/genx_common.o
- .debug_macro   0x00026de1      0x2e5 build/genx_i2c_manager.o
- .debug_macro   0x000270c6       0x58 build/genx_i2c_manager.o
- .debug_macro   0x0002711e      0x395 build/genx_oled.o
- .debug_macro   0x000274b3      0x28a build/genx_pwm.o
- .debug_macro   0x0002773d      0x518 build/genx_scheduler.o
- .debug_macro   0x00027c55       0x22 build/genx_scheduler.o
- .debug_macro   0x00027c77       0x1c build/genx_scheduler.o
- .debug_macro   0x00027c93       0x28 build/genx_scheduler.o
- .debug_macro   0x00027cbb      0x240 build/genx_simulink_bridge.o
- .debug_macro   0x00027efb      0x386 build/genx_uart_rte.o
- .debug_macro   0x00028281      0x559 build/main.o
- .debug_macro   0x000287da       0x10 build/main.o
- .debug_macro   0x000287ea      0x33b build/rt_logging.o
- .debug_macro   0x00028b25      0x10e build/rt_logging.o
- .debug_macro   0x00028c33       0x86 build/rt_logging.o
- .debug_macro   0x00028cb9       0x22 build/rt_logging.o
- .debug_macro   0x00028cdb      0x160 build/rt_nonfinite.o
+ .debug_macro   0x000000b6      0x8e6 build/system_S32K144.o
+ .debug_macro   0x0000099c       0x10 build/system_S32K144.o
+ .debug_macro   0x000009ac       0x79 build/system_S32K144.o
+ .debug_macro   0x00000a25       0x19 build/system_S32K144.o
+ .debug_macro   0x00000a3e       0x22 build/system_S32K144.o
+ .debug_macro   0x00000a60       0x56 build/system_S32K144.o
+ .debug_macro   0x00000ab6       0x51 build/system_S32K144.o
+ .debug_macro   0x00000b07       0xef build/system_S32K144.o
+ .debug_macro   0x00000bf6       0x6a build/system_S32K144.o
+ .debug_macro   0x00000c60      0x1df build/system_S32K144.o
+ .debug_macro   0x00000e3f     0xed1d build/system_S32K144.o
+ .debug_macro   0x0000fb5c      0xbbd build/system_S32K144.o
+ .debug_macro   0x00010719       0x22 build/system_S32K144.o
+ .debug_macro   0x0001073b       0x28 build/system_S32K144.o
+ .debug_macro   0x00010763       0xb6 build/startup.o
+ .debug_macro   0x00010819     0xed32 build/startup.o
+ .debug_macro   0x0001f54b       0x40 build/startup.o
+ .debug_macro   0x0001f58b      0x2b0 build/clock_S32K1xx.o
+ .debug_macro   0x0001f83b      0x16d build/clock_S32K1xx.o
+ .debug_macro   0x0001f9a8       0x16 build/clock_S32K1xx.o
+ .debug_macro   0x0001f9be       0x8a build/clock_S32K1xx.o
+ .debug_macro   0x0001fa48       0xca build/interrupt_manager.o
+ .debug_macro   0x0001fb12       0xde build/pins_driver.o
+ .debug_macro   0x0001fbf0       0xde build/pins_port_hw_access.o
+ .debug_macro   0x0001fcce       0xf7 build/edma_driver.o
+ .debug_macro   0x0001fdc5       0x16 build/edma_driver.o
+ .debug_macro   0x0001fddb       0xcc build/edma_hw_access.o
+ .debug_macro   0x0001fea7       0xd0 build/edma_irq.o
+ .debug_macro   0x0001ff77       0xd2 build/flash_driver.o
+ .debug_macro   0x00020049      0x575 build/flash_driver.o
+ .debug_macro   0x000205be      0x19a build/flexcan_driver.o
+ .debug_macro   0x00020758       0x4c build/flexcan_driver.o
+ .debug_macro   0x000207a4       0x18 build/flexcan_driver.o
+ .debug_macro   0x000207bc       0x5c build/flexcan_driver.o
+ .debug_macro   0x00020818       0x35 build/flexcan_driver.o
+ .debug_macro   0x0002084d       0x34 build/flexcan_driver.o
+ .debug_macro   0x00020881       0x16 build/flexcan_driver.o
+ .debug_macro   0x00020897       0x57 build/flexcan_driver.o
+ .debug_macro   0x000208ee       0x10 build/flexcan_driver.o
+ .debug_macro   0x000208fe      0x184 build/flexcan_driver.o
+ .debug_macro   0x00020a82      0x170 build/flexcan_hw_access.o
+ .debug_macro   0x00020bf2       0xb7 build/flexcan_irq.o
+ .debug_macro   0x00020ca9      0x10e build/ftm_common.o
+ .debug_macro   0x00020db7       0xbe build/ftm_common.o
+ .debug_macro   0x00020e75      0x107 build/ftm_hw_access.o
+ .debug_macro   0x00020f7c      0x11c build/ftm_ic_driver.o
+ .debug_macro   0x00021098      0x121 build/ftm_pwm_driver.o
+ .debug_macro   0x000211b9       0x10 build/ftm_pwm_driver.o
+ .debug_macro   0x000211c9      0x143 build/lpi2c_driver.o
+ .debug_macro   0x0002130c       0x88 build/lpi2c_driver.o
+ .debug_macro   0x00021394       0xfe build/lpi2c_hw_access.o
+ .debug_macro   0x00021492       0x82 build/lpi2c_hw_access.o
+ .debug_macro   0x00021514      0x100 build/lpi2c_irq.o
+ .debug_macro   0x00021614       0xf0 build/lptmr_driver.o
+ .debug_macro   0x00021704       0xc7 build/lptmr_hw_access.o
+ .debug_macro   0x000217cb      0x12d build/lpuart_driver.o
+ .debug_macro   0x000218f8       0x34 build/lpuart_driver.o
+ .debug_macro   0x0002192c      0x109 build/lpuart_hw_access.o
+ .debug_macro   0x00021a35       0xc1 build/lpuart_irq.o
+ .debug_macro   0x00021af6       0xfb build/osif_baremetal.o
+ .debug_macro   0x00021bf1       0xe4 build/UdsBootMgr.o
+ .debug_macro   0x00021cd5       0x10 build/UdsBootMgr.o
+ .debug_macro   0x00021ce5      0x1d4 build/UdsNvmMgr.o
+ .debug_macro   0x00021eb9       0x52 build/UdsNvmMgr.o
+ .debug_macro   0x00021f0b       0x16 build/UdsNvmMgr.o
+ .debug_macro   0x00021f21       0x35 build/UdsNvmMgr.o
+ .debug_macro   0x00021f56      0x35c build/UdsNvmMgr.o
+ .debug_macro   0x000222b2       0x10 build/UdsNvmMgr.o
+ .debug_macro   0x000222c2       0x52 build/UdsNvmMgr.o
+ .debug_macro   0x00022314       0x1f build/UdsNvmMgr.o
+ .debug_macro   0x00022333       0x43 build/UdsNvmMgr.o
+ .debug_macro   0x00022376       0x20 build/UdsNvmMgr.o
+ .debug_macro   0x00022396      0x18e build/UdsNvmMgr.o
+ .debug_macro   0x00022524       0x10 build/UdsNvmMgr.o
+ .debug_macro   0x00022534       0xb6 build/UdsNvmMgr.o
+ .debug_macro   0x000225ea       0x16 build/UdsNvmMgr.o
+ .debug_macro   0x00022600      0x129 build/UdsNvmMgr.o
+ .debug_macro   0x00022729      0x271 build/ancit_driver_timer.o
+ .debug_macro   0x0002299a       0x40 build/ancit_driver_timer.o
+ .debug_macro   0x000229da      0x254 build/ancit_driver_uart.o
+ .debug_macro   0x00022c2e      0x385 build/fota_uart.o
+ .debug_macro   0x00022fb3       0x97 build/fota_uart.o
+ .debug_macro   0x0002304a       0xf6 build/fota_uart.o
+ .debug_macro   0x00023140       0x22 build/fota_uart.o
+ .debug_macro   0x00023162       0x16 build/fota_uart.o
+ .debug_macro   0x00023178      0x177 build/fota_utils.o
+ .debug_macro   0x000232ef      0x270 build/ancit_pwm.o
+ .debug_macro   0x0002355f       0x40 build/ancit_pwm.o
+ .debug_macro   0x0002359f       0x7b build/ancit_common.o
+ .debug_macro   0x0002361a      0x280 build/ancit_scheduler.o
+ .debug_macro   0x0002389a      0x284 build/ancit_timer.o
+ .debug_macro   0x00023b1e       0x40 build/ancit_timer.o
+ .debug_macro   0x00023b5e      0x40c build/ancit_uart_rte.o
+ .debug_macro   0x00023f6a       0x3a build/ancit_uart_rte.o
+ .debug_macro   0x00023fa4       0x10 build/ancit_uart_rte.o
+ .debug_macro   0x00023fb4       0x16 build/ancit_uart_rte.o
+ .debug_macro   0x00023fca       0x16 build/ancit_uart_rte.o
+ .debug_macro   0x00023fe0       0x22 build/ancit_uart_rte.o
+ .debug_macro   0x00024002      0x318 build/ancit_ultrasonic.o
+ .debug_macro   0x0002431a       0x3a build/ancit_ultrasonic.o
+ .debug_macro   0x00024354       0xde build/ancit_ultrasonic.o
+ .debug_macro   0x00024432      0x311 build/ancit_i2c_manager.o
+ .debug_macro   0x00024743       0x52 build/ancit_i2c_manager.o
+ .debug_macro   0x00024795       0x10 build/ancit_i2c_manager.o
+ .debug_macro   0x000247a5      0x36d build/ancit_oled_driver.o
+ .debug_macro   0x00024b12       0x40 build/ancit_oled_driver.o
+ .debug_macro   0x00024b52       0x28 build/ancit_oled_driver.o
+ .debug_macro   0x00024b7a      0x3a0 build/ancit_oled_handler.o
+ .debug_macro   0x00024f1a      0x2aa build/ssd1306_fonts.o
+ .debug_macro   0x000251c4       0xd9 build/clock_config.o
+ .debug_macro   0x0002529d       0xd2 build/peripherals_flash_1.o
+ .debug_macro   0x0002536f       0xf3 build/peripherals_flexTimer_ic_echo.o
+ .debug_macro   0x00025462       0xf8 build/peripherals_flexTimer_pwm_0.o
+ .debug_macro   0x0002555a       0xff build/peripherals_lpi2c_config_1.o
+ .debug_macro   0x00025659       0xc4 build/peripherals_lptmr_1.o
+ .debug_macro   0x0002571d      0x10a build/peripherals_lpuart_1.o
+ .debug_macro   0x00025827       0xd9 build/pin_mux.o
+ .debug_macro   0x00025900      0x210 build/ACC.o
+ .debug_macro   0x00025b10       0x10 build/ACC.o
+ .debug_macro   0x00025b20       0x10 build/ACC.o
+ .debug_macro   0x00025b30       0x7c build/ACC.o
+ .debug_macro   0x00025bac       0x17 build/ACC.o
+ .debug_macro   0x00025bc3       0xee build/ACC.o
+ .debug_macro   0x00025cb1       0x10 build/ACC.o
+ .debug_macro   0x00025cc1      0x183 build/ACC.o
+ .debug_macro   0x00025e44      0x185 build/ACC.o
+ .debug_macro   0x00025fc9       0x4a build/ACC.o
+ .debug_macro   0x00026013       0x88 build/ACC.o
+ .debug_macro   0x0002609b      0x2f8 build/ACC.o
+ .debug_macro   0x00026393       0x16 build/ACC.o
+ .debug_macro   0x000263a9       0x28 build/ACC.o
+ .debug_macro   0x000263d1       0xeb build/ACC.o
+ .debug_macro   0x000264bc       0x5e build/ACC.o
+ .debug_macro   0x0002651a       0xc9 build/ACC.o
+ .debug_macro   0x000265e3       0x40 build/ACC.o
+ .debug_macro   0x00026623       0x10 build/ACC.o
+ .debug_macro   0x00026633      0x201 build/ACC_data.o
+ .debug_macro   0x00026834      0x29e build/SK_DC.o
+ .debug_macro   0x00026ad2      0x315 build/genx_common.o
+ .debug_macro   0x00026de7      0x2e5 build/genx_i2c_manager.o
+ .debug_macro   0x000270cc       0x58 build/genx_i2c_manager.o
+ .debug_macro   0x00027124      0x395 build/genx_oled.o
+ .debug_macro   0x000274b9      0x28a build/genx_pwm.o
+ .debug_macro   0x00027743      0x518 build/genx_scheduler.o
+ .debug_macro   0x00027c5b       0x22 build/genx_scheduler.o
+ .debug_macro   0x00027c7d       0x1c build/genx_scheduler.o
+ .debug_macro   0x00027c99       0x28 build/genx_scheduler.o
+ .debug_macro   0x00027cc1      0x240 build/genx_simulink_bridge.o
+ .debug_macro   0x00027f01      0x386 build/genx_uart_rte.o
+ .debug_macro   0x00028287      0x559 build/main.o
+ .debug_macro   0x000287e0       0x10 build/main.o
+ .debug_macro   0x000287f0      0x33b build/rt_logging.o
+ .debug_macro   0x00028b2b      0x10e build/rt_logging.o
+ .debug_macro   0x00028c39       0x86 build/rt_logging.o
+ .debug_macro   0x00028cbf       0x22 build/rt_logging.o
+ .debug_macro   0x00028ce1      0x160 build/rt_nonfinite.o
 
 .debug_line     0x00000000    0x1f423
  .debug_line    0x00000000      0x42e build/system_S32K144.o
@@ -8107,134 +8107,134 @@ OUTPUT(build/SM_Rover_V1.elf elf32-littlearm)
  .debug_line    0x0001efbb      0x3a9 build/rt_nonfinite.o
  .debug_line    0x0001f364       0xbf build/startup_S32K144.o
 
-.debug_str      0x00000000    0x87127
- .debug_str     0x00000000    0x68879 build/system_S32K144.o
-                              0x68a13 (size before relaxing)
- .debug_str     0x00068879      0x399 build/startup.o
-                              0x68b85 (size before relaxing)
- .debug_str     0x00068c12     0x40d7 build/clock_S32K1xx.o
-                              0x6cc99 (size before relaxing)
- .debug_str     0x0006cce9      0x7b9 build/interrupt_manager.o
-                              0x6930e (size before relaxing)
- .debug_str     0x0006d4a2      0x9d0 build/pins_driver.o
-                              0x69ce1 (size before relaxing)
- .debug_str     0x0006de72      0x1cf build/pins_port_hw_access.o
-                              0x691c9 (size before relaxing)
- .debug_str     0x0006e041     0x1960 build/edma_driver.o
-                              0x6b95f (size before relaxing)
- .debug_str     0x0006f9a1       0x43 build/edma_hw_access.o
-                              0x690f0 (size before relaxing)
- .debug_str     0x0006f9e4      0x15f build/edma_irq.o
-                              0x68dfb (size before relaxing)
- .debug_str     0x0006fb43     0x264a build/flash_driver.o
-                              0x6c0ae (size before relaxing)
- .debug_str     0x0007218d     0x281b build/flexcan_driver.o
-                              0x6ca4a (size before relaxing)
- .debug_str     0x000749a8      0x508 build/flexcan_hw_access.o
-                              0x6aed7 (size before relaxing)
- .debug_str     0x00074eb0      0x179 build/flexcan_irq.o
-                              0x6893b (size before relaxing)
- .debug_str     0x00075029     0x19c9 build/ftm_common.o
-                              0x6ba08 (size before relaxing)
- .debug_str     0x000769f2       0xa4 build/ftm_hw_access.o
-                              0x6a00a (size before relaxing)
- .debug_str     0x00076a96      0x701 build/ftm_ic_driver.o
-                              0x6aef4 (size before relaxing)
- .debug_str     0x00077197      0x96b build/ftm_pwm_driver.o
-                              0x6b337 (size before relaxing)
- .debug_str     0x00077b02     0x1b5b build/lpi2c_driver.o
-                              0x6c2b9 (size before relaxing)
- .debug_str     0x0007965d       0x6c build/lpi2c_hw_access.o
-                              0x69031 (size before relaxing)
- .debug_str     0x000796c9       0x6b build/lpi2c_irq.o
-                              0x68beb (size before relaxing)
- .debug_str     0x00079734      0xb14 build/lptmr_driver.o
-                              0x6a479 (size before relaxing)
- .debug_str     0x0007a248       0x31 build/lptmr_hw_access.o
-                              0x68aee (size before relaxing)
- .debug_str     0x0007a279      0xe1d build/lpuart_driver.o
-                              0x6b0ed (size before relaxing)
- .debug_str     0x0007b096       0xc1 build/lpuart_hw_access.o
-                              0x69a9f (size before relaxing)
- .debug_str     0x0007b157       0x66 build/lpuart_irq.o
-                              0x6880a (size before relaxing)
- .debug_str     0x0007b1bd      0x1ae build/osif_baremetal.o
-                              0x69b5c (size before relaxing)
- .debug_str     0x0007b36b      0x186 build/UdsBootMgr.o
-                              0x6ac06 (size before relaxing)
- .debug_str     0x0007b4f1     0x30bd build/UdsNvmMgr.o
-                              0x6e855 (size before relaxing)
- .debug_str     0x0007e5ae      0x990 build/ancit_driver_timer.o
-                              0x70838 (size before relaxing)
- .debug_str     0x0007ef3e       0xdf build/ancit_driver_uart.o
-                              0x707c7 (size before relaxing)
- .debug_str     0x0007f01d      0x340 build/fota_uart.o
-                              0x73c7c (size before relaxing)
- .debug_str     0x0007f35d       0x50 build/fota_utils.o
-                              0x6636e (size before relaxing)
- .debug_str     0x0007f3ad      0x220 build/ancit_pwm.o
-                              0x709be (size before relaxing)
- .debug_str     0x0007f5cd      0x2f2 build/ancit_common.o
-                               0x3bf3 (size before relaxing)
- .debug_str     0x0007f8bf      0x102 build/ancit_scheduler.o
-                              0x708ff (size before relaxing)
- .debug_str     0x0007f9c1      0x19e build/ancit_timer.o
-                              0x70959 (size before relaxing)
- .debug_str     0x0007fb5f      0x412 build/ancit_uart_rte.o
-                              0x73f4f (size before relaxing)
- .debug_str     0x0007ff71      0x6c3 build/ancit_ultrasonic.o
-                              0x73b47 (size before relaxing)
- .debug_str     0x00080634      0x512 build/ancit_i2c_manager.o
-                              0x739b2 (size before relaxing)
- .debug_str     0x00080b46      0x849 build/ancit_oled_driver.o
-                              0x742bc (size before relaxing)
- .debug_str     0x0008138f      0x38c build/ancit_oled_handler.o
-                              0x73ff5 (size before relaxing)
- .debug_str     0x0008171b       0x5c build/ssd1306_fonts.o
-                              0x70cb4 (size before relaxing)
- .debug_str     0x00081777       0x15 build/clock_config.o
-                              0x6aabb (size before relaxing)
- .debug_str     0x0008178c       0x1c build/peripherals_flash_1.o
-                              0x6aa4f (size before relaxing)
- .debug_str     0x000817a8       0x26 build/peripherals_flexTimer_ic_echo.o
-                              0x6a19f (size before relaxing)
- .debug_str     0x000817ce       0x24 build/peripherals_flexTimer_pwm_0.o
-                              0x6a3ef (size before relaxing)
- .debug_str     0x000817f2       0x23 build/peripherals_lpi2c_config_1.o
-                              0x68d12 (size before relaxing)
- .debug_str     0x00081815       0x1c build/peripherals_lptmr_1.o
-                              0x68c5e (size before relaxing)
- .debug_str     0x00081831       0x1d build/peripherals_lpuart_1.o
-                              0x6970e (size before relaxing)
- .debug_str     0x0008184e       0x10 build/pin_mux.o
-                              0x68ef9 (size before relaxing)
- .debug_str     0x0008185e     0x3fc0 build/ACC.o
-                               0x9e59 (size before relaxing)
- .debug_str     0x0008581e        0xf build/ACC_data.o
-                               0x9d58 (size before relaxing)
- .debug_str     0x0008582d       0xaa build/SK_DC.o
-                              0x70939 (size before relaxing)
- .debug_str     0x000858d7       0x33 build/genx_common.o
-                              0x732b3 (size before relaxing)
- .debug_str     0x0008590a      0x19d build/genx_i2c_manager.o
-                              0x70f5a (size before relaxing)
- .debug_str     0x00085aa7       0xc2 build/genx_oled.o
-                              0x73eb7 (size before relaxing)
- .debug_str     0x00085b69       0xf1 build/genx_pwm.o
-                              0x70a45 (size before relaxing)
- .debug_str     0x00085c5a      0x2aa build/genx_scheduler.o
-                              0x78596 (size before relaxing)
- .debug_str     0x00085f04       0x2a build/genx_simulink_bridge.o
-                               0xa93c (size before relaxing)
- .debug_str     0x00085f2e       0x27 build/genx_uart_rte.o
-                              0x73a9e (size before relaxing)
- .debug_str     0x00085f55       0x15 build/main.o
-                              0x78717 (size before relaxing)
- .debug_str     0x00085f6a     0x110c build/rt_logging.o
-                               0x94bf (size before relaxing)
- .debug_str     0x00087076       0x35 build/rt_nonfinite.o
-                               0x6d85 (size before relaxing)
- .debug_str     0x000870ab       0x7c build/startup_S32K144.o
+.debug_str      0x00000000    0x87135
+ .debug_str     0x00000000    0x68887 build/system_S32K144.o
+                              0x68a21 (size before relaxing)
+ .debug_str     0x00068887      0x399 build/startup.o
+                              0x68b93 (size before relaxing)
+ .debug_str     0x00068c20     0x40d7 build/clock_S32K1xx.o
+                              0x6cca7 (size before relaxing)
+ .debug_str     0x0006ccf7      0x7b9 build/interrupt_manager.o
+                              0x6931c (size before relaxing)
+ .debug_str     0x0006d4b0      0x9d0 build/pins_driver.o
+                              0x69cef (size before relaxing)
+ .debug_str     0x0006de80      0x1cf build/pins_port_hw_access.o
+                              0x691d7 (size before relaxing)
+ .debug_str     0x0006e04f     0x1960 build/edma_driver.o
+                              0x6b96d (size before relaxing)
+ .debug_str     0x0006f9af       0x43 build/edma_hw_access.o
+                              0x690fe (size before relaxing)
+ .debug_str     0x0006f9f2      0x15f build/edma_irq.o
+                              0x68e09 (size before relaxing)
+ .debug_str     0x0006fb51     0x264a build/flash_driver.o
+                              0x6c0bc (size before relaxing)
+ .debug_str     0x0007219b     0x281b build/flexcan_driver.o
+                              0x6ca58 (size before relaxing)
+ .debug_str     0x000749b6      0x508 build/flexcan_hw_access.o
+                              0x6aee5 (size before relaxing)
+ .debug_str     0x00074ebe      0x179 build/flexcan_irq.o
+                              0x68949 (size before relaxing)
+ .debug_str     0x00075037     0x19c9 build/ftm_common.o
+                              0x6ba16 (size before relaxing)
+ .debug_str     0x00076a00       0xa4 build/ftm_hw_access.o
+                              0x6a018 (size before relaxing)
+ .debug_str     0x00076aa4      0x701 build/ftm_ic_driver.o
+                              0x6af02 (size before relaxing)
+ .debug_str     0x000771a5      0x96b build/ftm_pwm_driver.o
+                              0x6b345 (size before relaxing)
+ .debug_str     0x00077b10     0x1b5b build/lpi2c_driver.o
+                              0x6c2c7 (size before relaxing)
+ .debug_str     0x0007966b       0x6c build/lpi2c_hw_access.o
+                              0x6903f (size before relaxing)
+ .debug_str     0x000796d7       0x6b build/lpi2c_irq.o
+                              0x68bf9 (size before relaxing)
+ .debug_str     0x00079742      0xb14 build/lptmr_driver.o
+                              0x6a487 (size before relaxing)
+ .debug_str     0x0007a256       0x31 build/lptmr_hw_access.o
+                              0x68afc (size before relaxing)
+ .debug_str     0x0007a287      0xe1d build/lpuart_driver.o
+                              0x6b0fb (size before relaxing)
+ .debug_str     0x0007b0a4       0xc1 build/lpuart_hw_access.o
+                              0x69aad (size before relaxing)
+ .debug_str     0x0007b165       0x66 build/lpuart_irq.o
+                              0x68818 (size before relaxing)
+ .debug_str     0x0007b1cb      0x1ae build/osif_baremetal.o
+                              0x69b6a (size before relaxing)
+ .debug_str     0x0007b379      0x186 build/UdsBootMgr.o
+                              0x6ac14 (size before relaxing)
+ .debug_str     0x0007b4ff     0x30bd build/UdsNvmMgr.o
+                              0x6e863 (size before relaxing)
+ .debug_str     0x0007e5bc      0x990 build/ancit_driver_timer.o
+                              0x70846 (size before relaxing)
+ .debug_str     0x0007ef4c       0xdf build/ancit_driver_uart.o
+                              0x707d5 (size before relaxing)
+ .debug_str     0x0007f02b      0x340 build/fota_uart.o
+                              0x73c8a (size before relaxing)
+ .debug_str     0x0007f36b       0x50 build/fota_utils.o
+                              0x6637c (size before relaxing)
+ .debug_str     0x0007f3bb      0x220 build/ancit_pwm.o
+                              0x709cc (size before relaxing)
+ .debug_str     0x0007f5db      0x2f2 build/ancit_common.o
+                               0x3c01 (size before relaxing)
+ .debug_str     0x0007f8cd      0x102 build/ancit_scheduler.o
+                              0x7090d (size before relaxing)
+ .debug_str     0x0007f9cf      0x19e build/ancit_timer.o
+                              0x70967 (size before relaxing)
+ .debug_str     0x0007fb6d      0x412 build/ancit_uart_rte.o
+                              0x73f5d (size before relaxing)
+ .debug_str     0x0007ff7f      0x6c3 build/ancit_ultrasonic.o
+                              0x73b55 (size before relaxing)
+ .debug_str     0x00080642      0x512 build/ancit_i2c_manager.o
+                              0x739c0 (size before relaxing)
+ .debug_str     0x00080b54      0x849 build/ancit_oled_driver.o
+                              0x742ca (size before relaxing)
+ .debug_str     0x0008139d      0x38c build/ancit_oled_handler.o
+                              0x74003 (size before relaxing)
+ .debug_str     0x00081729       0x5c build/ssd1306_fonts.o
+                              0x70cc2 (size before relaxing)
+ .debug_str     0x00081785       0x15 build/clock_config.o
+                              0x6aac9 (size before relaxing)
+ .debug_str     0x0008179a       0x1c build/peripherals_flash_1.o
+                              0x6aa5d (size before relaxing)
+ .debug_str     0x000817b6       0x26 build/peripherals_flexTimer_ic_echo.o
+                              0x6a1ad (size before relaxing)
+ .debug_str     0x000817dc       0x24 build/peripherals_flexTimer_pwm_0.o
+                              0x6a3fd (size before relaxing)
+ .debug_str     0x00081800       0x23 build/peripherals_lpi2c_config_1.o
+                              0x68d20 (size before relaxing)
+ .debug_str     0x00081823       0x1c build/peripherals_lptmr_1.o
+                              0x68c6c (size before relaxing)
+ .debug_str     0x0008183f       0x1d build/peripherals_lpuart_1.o
+                              0x6971c (size before relaxing)
+ .debug_str     0x0008185c       0x10 build/pin_mux.o
+                              0x68f07 (size before relaxing)
+ .debug_str     0x0008186c     0x3fc0 build/ACC.o
+                               0x9e67 (size before relaxing)
+ .debug_str     0x0008582c        0xf build/ACC_data.o
+                               0x9d66 (size before relaxing)
+ .debug_str     0x0008583b       0xaa build/SK_DC.o
+                              0x70947 (size before relaxing)
+ .debug_str     0x000858e5       0x33 build/genx_common.o
+                              0x732c1 (size before relaxing)
+ .debug_str     0x00085918      0x19d build/genx_i2c_manager.o
+                              0x70f68 (size before relaxing)
+ .debug_str     0x00085ab5       0xc2 build/genx_oled.o
+                              0x73ec5 (size before relaxing)
+ .debug_str     0x00085b77       0xf1 build/genx_pwm.o
+                              0x70a53 (size before relaxing)
+ .debug_str     0x00085c68      0x2aa build/genx_scheduler.o
+                              0x785a4 (size before relaxing)
+ .debug_str     0x00085f12       0x2a build/genx_simulink_bridge.o
+                               0xa94a (size before relaxing)
+ .debug_str     0x00085f3c       0x27 build/genx_uart_rte.o
+                              0x73aac (size before relaxing)
+ .debug_str     0x00085f63       0x15 build/main.o
+                              0x78725 (size before relaxing)
+ .debug_str     0x00085f78     0x110c build/rt_logging.o
+                               0x94cd (size before relaxing)
+ .debug_str     0x00087084       0x35 build/rt_nonfinite.o
+                               0x6d93 (size before relaxing)
+ .debug_str     0x000870b9       0x7c build/startup_S32K144.o
                                  0xbd (size before relaxing)
 
 .comment        0x00000000       0x7e

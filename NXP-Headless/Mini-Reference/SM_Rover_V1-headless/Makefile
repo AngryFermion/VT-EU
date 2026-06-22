@@ -97,6 +97,7 @@ INCLUDES := \
   -I $(NXP_K144_RTM)/platform/drivers/inc \
   -I $(NXP_K144_RTM)/platform/drivers/src/lptmr \
   -I $(NXP_K144_RTM)/platform/drivers/src/clock
+CFLAGS += -DACC_VARIANT
 
 # ==== Source files ====
 C_SOURCES := \
